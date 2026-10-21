@@ -265,18 +265,24 @@
   /* ---------- 7. Rolagem: fio dourado e paralaxe das moedas e balões ---------- */
   function rolagem() {
     var flut = Array.prototype.slice.call(document.querySelectorAll('.flut'));
-    var raiz = document.documentElement, pendente = false;
+    // o progresso vai só para quem o usa (nunca na raiz: isso reavalia o estilo da página inteira a cada quadro)
+    var alvosP = [document.querySelector('.fio'), document.querySelector('.topo')].filter(Boolean);
+    var secoes = [], vistos = [];
+    flut.forEach(function (el) { var s = el.parentElement, i = secoes.indexOf(s); if (i < 0) { secoes.push(s); i = secoes.length - 1; } vistos.push(i); });
+    var pendente = false;
     function quadro() {
       pendente = false;
-      var max = raiz.scrollHeight - window.innerHeight;
-      raiz.style.setProperty('--p', (max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0).toFixed(4));
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = (max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0).toFixed(4);
+      alvosP.forEach(function (a) { a.style.setProperty('--p', p); });
       if (reduzir) return;
-      flut.forEach(function (el) {
-        var sec = el.parentElement.getBoundingClientRect();
-        if (sec.bottom < -200 || sec.top > window.innerHeight + 200) return;
-        var py = (sec.top + sec.height / 2 - window.innerHeight / 2) * parseFloat(el.getAttribute('data-v'));
-        el.style.setProperty('--py', py.toFixed(1) + 'px');
+      // leitura de todas as medidas primeiro, escrita depois: sem forçar layout a cada moeda
+      var alt = window.innerHeight, rects = secoes.map(function (s) { return s.getBoundingClientRect(); });
+      var py = flut.map(function (el, k) {
+        var r = rects[vistos[k]];
+        return (r.bottom < -200 || r.top > alt + 200) ? null : (r.top + r.height / 2 - alt / 2) * parseFloat(el.getAttribute('data-v'));
       });
+      flut.forEach(function (el, k) { if (py[k] !== null) el.style.setProperty('--py', py[k].toFixed(1) + 'px'); });
     }
     function pedir() { if (!pendente) { pendente = true; requestAnimationFrame(quadro); } }
     window.addEventListener('scroll', pedir, { passive: true });

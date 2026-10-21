@@ -28,7 +28,7 @@ button { font: inherit; }
 .num { font-variant-numeric: tabular-nums; }
 
 /* topo */
-.topo { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--fundo) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--borda); }
+.topo { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--fundo) 95%, transparent); border-bottom: 1px solid var(--borda); }
 .topo .contido { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .marca { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; color: var(--texto); text-decoration: none; }
 .marca img { width: 34px; height: 34px; border-radius: 9px; }
@@ -263,7 +263,7 @@ details p { margin: 0 0 18px; color: var(--suave); }
 .curva.cima.esp { transform: rotate(180deg) scaleX(-1); }
 
 /* manchas de cor que derivam no fundo do topo e da chamada final */
-.blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .5; pointer-events: none; z-index: 0; will-change: transform; }
+.blob { position: absolute; border-radius: 50%; opacity: .55; pointer-events: none; z-index: 0; }
 .blob.b1 { width: 520px; height: 520px; left: -160px; top: -120px; background: radial-gradient(circle, #38bdf8, transparent 68%); animation: deriva1 22s ease-in-out infinite alternate; }
 .blob.b2 { width: 460px; height: 460px; right: -120px; top: 20%; background: radial-gradient(circle, #0ea5e9, transparent 68%); animation: deriva2 26s ease-in-out infinite alternate; }
 .blob.b3 { width: 340px; height: 340px; left: 38%; bottom: -140px; background: radial-gradient(circle, rgba(255, 194, 75, .55), transparent 70%); animation: deriva1 30s ease-in-out -8s infinite alternate-reverse; }
