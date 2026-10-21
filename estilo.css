@@ -1,10 +1,13 @@
-:root { color-scheme: light dark; --fundo:#ffffff; --texto:#1b1b1f; --suave:#5f5f6b; --marca:#0b7fb8; --borda:#e3e3ea; --caixa:#f3f8fb; }
-@media (prefers-color-scheme: dark) { :root { --fundo:#101216; --texto:#ececf1; --suave:#a5a5b2; --marca:#4cb8ee; --borda:#2a2d36; --caixa:#161a22; } }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-400.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-800.ttf") format("truetype"); font-weight: 800; font-display: swap; }
+:root { color-scheme: light dark; --fundo:#ffffff; --texto:#1b1b1f; --suave:#5f5f6b; --marca:#0369a1; --borda:#e3e3ea; --caixa:#f3f8fb; }
+@media (prefers-color-scheme: dark) { :root { --fundo:#101216; --texto:#ececf1; --suave:#a5a5b2; --marca:#5cc3f5; --borda:#2a2d36; --caixa:#161a22; } }
 * { box-sizing: border-box; }
-body { margin:0; background:var(--fundo); color:var(--texto); font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+body { margin:0; background:var(--fundo); color:var(--texto); font:400 17px/1.65 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased; }
 main { max-width:720px; margin:0 auto; padding:32px 20px 64px; }
-h1 { font-size:2rem; line-height:1.2; margin:0 0 .25rem; }
-h2 { font-size:1.25rem; margin:2.2rem 0 .5rem; }
+h1 { font-size:2.2rem; line-height:1.15; font-weight:800; letter-spacing:-.015em; margin:0 0 .25rem; }
+h2 { font-size:1.25rem; font-weight:600; margin:2.2rem 0 .5rem; }
 p, li { margin:.5rem 0; }
 ul { padding-left:1.3rem; }
 a { color:var(--marca); }
@@ -15,3 +18,10 @@ table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
 th, td { text-align:left; vertical-align:top; padding:10px 8px; border-bottom:1px solid var(--borda); }
 th { color:var(--suave); font-weight:600; }
 footer { margin-top:3rem; color:var(--suave); font-size:.9rem; }
+
+.topo-simples { border-bottom:1px solid var(--borda); }
+.topo-simples div { max-width:720px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; gap:10px; }
+.topo-simples a { display:flex; align-items:center; gap:10px; color:var(--texto); text-decoration:none; font-weight:800; }
+.topo-simples img { width:30px; height:30px; border-radius:8px; }
+.topo-simples span { margin-left:auto; color:var(--suave); font-size:.9rem; }
+:focus-visible { outline:3px solid #ffc24b; outline-offset:3px; border-radius:6px; }

@@ -3,17 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conta Aí: controle de gastos</title>
-<meta name="description" content="Conta Aí: anote gastos, fotografe recibos e veja quanto sobra no fim do mês. Seus dados ficam só no seu celular.">
-<link rel="stylesheet" href="estilo.css">
+<title>Conta Aí: controle de gastos no seu celular</title>
+<meta name="description" content="Anote gastos em segundos, fotografe recibos e veja quanto sobra no fim do mês. Sem cadastro, sem anúncios e com os dados só no seu celular. Para Android.">
+<meta name="theme-color" content="#0369a1">
+<link rel="canonical" href="https://jgabriel893.github.io/conta-ai/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Conta Aí">
+<meta property="og:title" content="Conta Aí: controle de gastos no seu celular">
+<meta property="og:description" content="Anote gastos, fotografe recibos e veja quanto sobra. Seus dados ficam só no seu celular.">
+<meta property="og:url" content="https://jgabriel893.github.io/conta-ai/">
+<meta property="og:image" content="https://jgabriel893.github.io/conta-ai/img/og-imagem.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/Inter-800.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="landing.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Conta Aí","applicationCategory":"FinanceApplication","operatingSystem":"Android","inLanguage":"pt-BR","description":"Controle de gastos pessoais para Android, com os dados só no celular."}</script>
 </head>
 <body>
-<main>
-<h1>Conta Aí</h1>
-<p class="suave">Controle de gastos pessoais para Android</p>
-<p>Anote gastos em segundos, fotografe o recibo e veja, no fim do mês, quanto sobrou. Seus dados ficam só no seu celular: sem cadastro, sem anúncios, sem acesso ao seu banco.</p>
-<p><a href="privacidade/">Política de privacidade</a></p>
-<footer>Dúvidas: <a href="mailto:EMAIL_DE_CONTATO">EMAIL_DE_CONTATO</a></footer>
+<a class="pulo" href="#recursos">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="contido">
+    <a class="marca" href="./"><img src="img/icone-192.png" width="34" height="34" alt="">Conta Aí</a>
+    <nav aria-label="Principal">
+      <a href="#telas">O app</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#perguntas" class="sempre">Perguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<div class="heroi">
+  <div class="contido">
+    <div>
+      <h1>Saiba <em>quanto</em> sobra, antes que o mês acabe.</h1>
+      <p class="sub">Anote um gasto em segundos, fotografe o recibo e veja para onde vai o seu dinheiro. Tudo fica só no seu celular.</p>
+      <div class="acoes">
+        <span class="botao cheio" aria-disabled="true">Em breve na Google Play</span>
+        <a class="botao vazado" href="#recursos">Ver o que ele faz</a>
+      </div>
+      <ul class="fichas"><li>Sem cadastro</li><li>Sem anúncios</li><li>Funciona sem internet</li></ul>
+    </div>
+    <div class="palco" aria-hidden="true">
+      <div class="celular c1"><img src="img/tela-01-inicio.webp" width="540" height="1080" alt=""></div>
+      <div class="celular c2"><img src="img/tela-02-recibo.webp" width="540" height="1080" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<section id="telas" class="alt">
+  <div class="contido">
+    <div class="titulo"><h2>Simples de usar, completo quando você precisa</h2><p>Telas reais do app. Você lança, acompanha e decide, sem planilha.</p></div>
+    <div class="telas"><figure><div class="celular"><img src="img/tela-01-inicio.webp" width="540" height="1080" loading="lazy" alt="Tela inicial do Conta Aí com saldo do mês, quanto pode gastar hoje e para onde foi o dinheiro"></div><figcaption>Visão do mês</figcaption></figure><figure><div class="celular"><img src="img/tela-02-recibo.webp" width="540" height="1080" loading="lazy" alt="Formulário de lançamento preenchido a partir da foto de um recibo"></div><figcaption>Foto do recibo</figcaption></figure><figure><div class="celular"><img src="img/tela-03-transacoes.webp" width="540" height="1080" loading="lazy" alt="Lista de transações do mês com categorias e valores"></div><figcaption>Todos os gastos</figcaption></figure><figure><div class="celular"><img src="img/tela-04-contas.webp" width="540" height="1080" loading="lazy" alt="Contas fixas com vencimentos e as já pagas"></div><figcaption>Contas fixas</figcaption></figure><figure><div class="celular"><img src="img/tela-05-metas.webp" width="540" height="1080" loading="lazy" alt="Meta de economia, desafio diário, objetivos e metas por categoria"></div><figcaption>Metas e objetivos</figcaption></figure><figure><div class="celular"><img src="img/tela-06-comparativo.webp" width="540" height="1080" loading="lazy" alt="Comparativo do mês atual com o anterior, por categoria"></div><figcaption>Comparativo</figcaption></figure></div>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="contido">
+    <div class="titulo"><h2>Tudo para controlar o seu dinheiro</h2><p>Sem complicação e sem precisar entregar o seu banco para ninguém.</p></div>
+    <div class="recursos"><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Lançamento em segundos</h3><p>Valor, categoria e pronto. Crie e personalize as suas categorias: o app aprende com as suas correções.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3>Foto do recibo</h3><p>Fotografe e o app lê valor, data e estabelecimento no próprio celular. Você confere e registra.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h12l-2 4 2 4H5"/></svg></div><h3>Metas que avisam</h3><p>Defina limites por categoria. O app avisa quando chega a 80% e quando estoura, e a sobra pode passar para o mês seguinte.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3>Contas e parcelas</h3><p>Contas fixas, parcelamentos e dívidas, com aviso antes do vencimento. Nada de boleto esquecido.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg></div><h3>Lançamentos automáticos</h3><p>Aluguel, salário e assinaturas entram sozinhos no dia certo, sem você digitar todo mês.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v2m0 8v2"/><path d="M9.5 9.6C9.5 8.6 10.6 8 12 8s2.5.7 2.5 1.8-1 1.5-2.5 1.9-2.5.8-2.5 1.9S10.6 15.5 12 15.5s2.5-.6 2.5-1.6"/></svg></div><h3>Quanto posso gastar hoje</h3><p>O app desconta as contas que ainda vão vencer, a meta de economia e os seus objetivos, e mostra o que sobra para hoje.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div><h3>Comparativo e previsão</h3><p>Compare o mês com o anterior, veja para onde foi o dinheiro e como o mês deve fechar.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4.5 1.6 4.5 4"/></svg></div><h3>Divisão de despesas</h3><p>Dividiu a conta com alguém? Acompanhe quem deve a quem e acerte com um toque.</p></article><article class="cartao"><div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 13h6M10 17h6"/></svg></div><h3>Planilhas e backup</h3><p>Importe e exporte em Excel ou CSV. Faça um backup completo e restaure quando trocar de celular.</p></article></div>
+  </div>
+</section>
+
+<section class="alt" id="como-funciona">
+  <div class="contido">
+    <div class="titulo"><h2>Como funciona</h2></div>
+    <div class="passos">
+      <div class="passo"><h3>Anote</h3><p>Digite o valor ou fotografe o recibo. O app sugere a categoria e você confere.</p></div>
+      <div class="passo"><h3>Acompanhe</h3><p>Metas, contas e parcelas ficam em um só lugar, com avisos antes do vencimento.</p></div>
+      <div class="passo"><h3>Decida</h3><p>Veja quanto pode gastar hoje, compare com o mês passado e ajuste o que precisar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="privacidade" id="privacidade">
+  <div class="contido">
+    <div>
+      <h2>O seu dinheiro é assunto seu.</h2>
+      <p>O Conta Aí não tem conta, não tem servidor guardando os seus lançamentos e não conecta com o seu banco. O que você anota fica no seu celular.</p>
+      <p>Para saber exatamente o que o app faz e quais serviços entram no caminho, leia a <a href="privacidade/">política de privacidade</a>.</p>
+    </div>
+    <ul class="garantias">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><div><strong>Dados só no celular</strong><span>Nada é enviado ao desenvolvedor.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>Sem cadastro e sem anúncios</strong><span>Não vendemos nem compartilhamos dados.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><div><strong>Recibo lido no aparelho</strong><span>A foto não sai do seu celular.</span></div></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 13h6M10 17h6"/></svg><div><strong>Backup nas suas mãos</strong><span>Um arquivo que você guarda onde quiser.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="perguntas">
+  <div class="contido">
+    <div class="titulo"><h2>Perguntas frequentes</h2></div>
+    <div class="perguntas"><details><summary>Preciso criar uma conta?</summary><p>Não. Você instala e já usa, sem cadastro, sem e-mail e sem senha.</p></details><details><summary>Funciona sem internet?</summary><p>Sim. Tudo funciona sem internet. O app só se conecta para buscar a taxa do CDI no Banco Central, usada para comparar o rendimento dos seus investimentos.</p></details><details><summary>Meus dados vão para algum servidor?</summary><p>Não. O que você anota fica no armazenamento do seu celular. A <a href="privacidade/">política de privacidade</a> explica cada detalhe, inclusive o que o Google e o Banco Central podem ver.</p></details><details><summary>O app conecta com o meu banco?</summary><p>Não, de propósito. Você lança os gastos (ou fotografa o recibo), e assim ninguém além de você tem acesso às suas contas.</p></details><details><summary>E se eu trocar de celular ou perder o aparelho?</summary><p>Faça um backup (um arquivo) e guarde onde quiser, como o Google Drive. No celular novo, é só restaurar. Se o backup do Android estiver ligado, ele também guarda uma cópia na sua conta Google. Sem backup, os dados não voltam.</p></details><details><summary>Quanto custa?</summary><p>O Conta Aí é por assinatura mensal, que você cancela quando quiser na Google Play. O valor e o período de teste vão aparecer na página do app na loja, no lançamento.</p></details><details><summary>Tem para iPhone?</summary><p>Por enquanto, apenas Android.</p></details></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="contido">
+    <h2>Chegou a hora de saber quanto sobra.</h2>
+    <p>O Conta Aí está chegando à Google Play para Android.</p>
+    <div class="acoes"><span class="botao cheio" aria-disabled="true">Em breve na Google Play</span></div>
+  </div>
+</section>
 </main>
+
+<footer class="rodape">
+  <div class="contido">
+    <span>© 2026 José Gabriel · Conta Aí</span>
+    <nav aria-label="Rodapé"><a href="privacidade/">Política de privacidade</a><a href="#inicio">Voltar ao topo</a></nav>
+    <small>Google Play e o logotipo do Google Play são marcas da Google LLC. Android é marca da Google LLC.</small>
+  </div>
+</footer>
 </body>
 </html>

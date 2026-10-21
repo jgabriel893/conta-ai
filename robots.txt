@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jgabriel893.github.io/conta-ai/sitemap.xml
