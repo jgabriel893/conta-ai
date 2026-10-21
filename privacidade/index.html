@@ -40,9 +40,13 @@
 </ul>
 <p>Nada disso é enviado ao desenvolvedor. Se você digitar dados de outras pessoas (por exemplo, o nome de quem divide uma despesa), eles também ficam só no seu aparelho.</p>
 
-<h2>3. Fotos de recibos e a câmera</h2>
+<h2>3. Fotos de recibos, câmera, voz e notificações</h2>
 <p>Ao fotografar um recibo, o app abre a câmera (ou a galeria) do próprio Android. O app <strong>não pede a permissão de câmera</strong>. A leitura do texto da foto (valor, data e estabelecimento) é feita <strong>dentro do aparelho</strong>, com o Google ML Kit, e a foto e o texto lido não são enviados para nós nem para o Google.</p>
 <p>Atenção: segundo os termos do ML Kit, o Google pode receber métricas técnicas de desempenho e uso desse componente (por exemplo, versão do app e do aparelho e tempo de processamento), sem o conteúdo das imagens. Também pode contatar servidores do Google de tempos em tempos para correções e atualizações do componente. Veja os <a href="https://developers.google.com/ml-kit/terms">termos do ML Kit</a> e a <a href="https://policies.google.com/privacy">Política de Privacidade do Google</a>.</p>
+
+<p><strong>Voz (opcional).</strong> Em “Falar”, o app pede a permissão de <strong>microfone</strong> do Android, somente quando você toca no botão do microfone. O que você diz é reconhecido <strong>dentro do aparelho</strong>, sem internet, pelo reconhecimento de voz do próprio Android. O Conta Aí usa apenas esse modo local: se o seu celular não o tiver, a voz fica indisponível (você pode digitar a frase) e o áudio <strong>não é enviado</strong> a nenhum servidor. O app não grava nem guarda o áudio; guarda apenas o texto que você confirmar como lançamento. O componente de voz do Android é fornecido pelo sistema (em geral, os Serviços de fala do Google) e segue as regras do fabricante do aparelho e do Google.</p>
+
+<p><strong>Compras e Pix pelas notificações do banco (opcional, desligado por padrão).</strong> Em Mais &gt; Compras pelo banco, você pode autorizar, nas configurações do Android, o “acesso às notificações” para o Conta Aí. O Android entrega ao app as notificações de todos os aplicativos, mas o Conta Aí <strong>descarta imediatamente, sem ler,</strong> as de qualquer app que você não tenha marcado como banco. Das notificações dos apps marcados, o app guarda o texto no próprio celular e o interpreta no aparelho (valor, estabelecimento, se foi compra ou Pix) apenas para criar um lançamento que <strong>espera a sua confirmação</strong>; nada é lançado sozinho. Ofertas, faturas, limites, saldos e códigos de segurança são ignorados. Esses textos <strong>não são enviados</strong> a nenhum servidor. Você pode desligar no app e tirar a autorização a qualquer momento nas configurações do Android.</p>
 
 <h2>4. Uso da internet</h2>
 <p>O app faz uma única consulta pela internet: a taxa diária do CDI, na API pública do Banco Central do Brasil, usada para comparar o rendimento dos seus investimentos. A consulta contém apenas o período desejado. Nenhum dado seu é enviado. Como em qualquer acesso à internet, o Banco Central pode ver o endereço IP da conexão.</p>
@@ -53,6 +57,7 @@
 <h2>6. Backup, planilhas e arquivos</h2>
 <ul>
 <li><strong>Backup e planilhas:</strong> são arquivos que você gera. Eles só vão para onde você os compartilhar (Drive, WhatsApp, e-mail etc.). O app não os envia a lugar nenhum. Ao importar uma planilha ou restaurar um backup, o app lê apenas o arquivo que você escolher.</li>
+<li><strong>Backup automático (opcional):</strong> se você ligar, o app salva sozinho o arquivo de backup numa pasta que <em>você</em> escolher no seletor do Android (no celular ou em uma pasta do seu Google Drive, se o seu aparelho permitir), mantendo as 5 cópias mais recentes. O app só enxerga a pasta escolhida e não envia o arquivo a lugar nenhum. O arquivo não tem senha: guarde-o em local seguro.</li>
 <li><strong>Cópia automática do Android:</strong> se o backup do aparelho estiver ligado nas configurações do Android, o sistema pode guardar uma cópia dos dados do app na sua conta Google e restaurá-la em outro celular. Isso é feito pelo Android e segue as regras do Google. Você pode desligar em Configurações &gt; Google &gt; Backup.</li>
 </ul>
 
@@ -75,7 +80,8 @@
 <p>A Lei Geral de Proteção de Dados (Lei 13.709/2018) dá a você direitos como confirmar o tratamento, acessar, corrigir e eliminar os seus dados. Como os dados estão no seu celular, você exerce esses direitos diretamente no app: ver, editar, exportar (planilha ou backup) e apagar. Se tiver qualquer dúvida ou pedido, escreva para <a href="mailto:EMAIL_DE_CONTATO">EMAIL_DE_CONTATO</a>.</p>
 
 <h2>11. Segurança</h2>
-<p>Os dados ficam no armazenamento privado do app, que o Android protege de outros aplicativos. O Conta Aí não tem senha própria: para proteger as suas informações, use o bloqueio de tela e a criptografia do aparelho, e guarde os backups em local seguro.</p>
+<p>Os dados ficam no armazenamento privado do app, que o Android protege de outros aplicativos. Para proteger as suas informações, use o bloqueio de tela e a criptografia do aparelho, e guarde os backups em local seguro.</p>
+<p><strong>Bloqueio opcional do app.</strong> Em Mais &gt; Bloqueio do app você pode exigir, ao abrir o Conta Aí, o bloqueio do próprio celular (digital, rosto, PIN ou padrão) ou um PIN de 6 dígitos só do app. Esse bloqueio impede que outra pessoa abra o app com o seu celular desbloqueado; ele não substitui a criptografia do aparelho. Com o bloqueio do celular, quem confere a digital, o rosto ou o PIN é o Android: o app só recebe a resposta "confirmado" ou "não" e <strong>nunca tem acesso aos dados biométricos</strong>. O PIN do app é guardado apenas no seu celular, como um código irreversível (não dá para descobrir o PIN a partir dele), e não sai do aparelho. Se você esquecer o PIN, é possível criá-lo de novo confirmando com o bloqueio de tela do celular; sem bloqueio de tela, só reinstalando o app e restaurando um backup.</p>
 
 <h2>12. Crianças</h2>
 <p>O app não é direcionado a crianças nem a menores de 18 anos, e não coleta dados de ninguém.</p>
