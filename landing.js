@@ -1,11 +1,10 @@
-/* Landing do Conta Aí: demonstração da voz, simulador com pote de moedas, balões do app, tela que muda com a rolagem,
-   abas, frase com a data, inclinação do celular, paralaxe e fio de rolagem.
+/* Landing do Conta Aí: simulador com pote de moedas, barra de vidro que se arrasta, balões do app, abas com seletor que desliza,
+   frase com a data, paralaxe, fio de rolagem e animações que pausam fora da tela.
    Sem bibliotecas, sem rede e sem guardar nada: tudo roda e morre na própria página. */
 (function () {
   'use strict';
 
   var reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ponteiroFino = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var $ = function (id) { return document.getElementById(id); };
   var brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
   var brl0 = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
@@ -21,84 +20,6 @@
     bolha._t = setTimeout(function () { s.textContent = texto; bolha.classList.remove('fora'); }, 220);
   }
   function calar(bolha) { if (bolha) { clearTimeout(bolha._t); bolha.classList.add('fora'); } }
-
-  /* ---------- 1. Demonstração: o app entendendo uma frase ---------- */
-  function demo() {
-    var raiz = $('demo');
-    if (!raiz || reduzir) return; // sem movimento, a página já traz o quadro final desenhado
-
-    var cenaFalar = $('cena-falar'), cenaInicio = $('cena-inicio');
-    var fala = $('fala-texto'), linhaMic = $('mic-linha'), estado = $('mic-estado');
-    var itens = Array.prototype.slice.call($('itens').children);
-    var registrar = $('registrar'), aviso = $('aviso-ok');
-    var lanc = Array.prototype.slice.call($('lanc').children);
-    var valor = $('hoje-valor'), barra = $('hoje-barra'), nota = $('hoje-nota');
-    var bolha = $('bolha-demo');
-    var frase = '30 de gasolina, 12 de pão e 25 de sorvete'.split(' ');
-    var visivel = true;
-
-    new IntersectionObserver(function (e) { visivel = e[0].isIntersecting; }, { threshold: 0.2 }).observe(raiz);
-
-    function pausa(ms) {
-      return new Promise(function (ok) {
-        (function volta(resta) {
-          if (!visivel || document.hidden) return setTimeout(function () { volta(resta); }, 250);
-          if (resta <= 0) return ok();
-          setTimeout(function () { volta(resta - 100); }, Math.min(100, resta));
-        })(ms);
-      });
-    }
-    function contar(el, de, ate, ms) {
-      var t0 = performance.now();
-      (function passo(t) {
-        var p = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - p, 3);
-        el.textContent = brl.format(de + (ate - de) * e);
-        if (p < 1) requestAnimationFrame(passo);
-      })(t0);
-    }
-    function zerar() {
-      cenaInicio.classList.remove('ativa'); cenaFalar.classList.add('ativa');
-      fala.textContent = ''; linhaMic.classList.remove('ouvindo'); estado.textContent = 'Toque e fale';
-      itens.forEach(function (li) { li.classList.remove('entrou'); });
-      registrar.classList.remove('entrou', 'toque'); aviso.classList.remove('entrou');
-      lanc.forEach(function (li) { li.classList.remove('entrou'); });
-      valor.textContent = brl.format(120); barra.style.width = '100%'; nota.textContent = 'Você ainda não gastou hoje';
-      calar(bolha);
-    }
-
-    async function ciclo() {
-      for (;;) {
-        zerar();
-        await pausa(900);
-        linhaMic.classList.add('ouvindo'); estado.textContent = 'Ouvindo…';
-        dizer(bolha, 'Pode falar, tô ouvindo.');
-        await pausa(500);
-        for (var i = 0; i < frase.length; i++) {
-          fala.textContent += (i ? ' ' : '') + frase[i];
-          await pausa(210);
-        }
-        linhaMic.classList.remove('ouvindo'); estado.textContent = 'Entendi 3 gastos';
-        dizer(bolha, 'Entendi três gastos. Confere aí.');
-        await pausa(350);
-        for (var j = 0; j < itens.length; j++) { itens[j].classList.add('entrou'); await pausa(380); }
-        registrar.classList.add('entrou');
-        await pausa(1100);
-        registrar.classList.add('toque'); await pausa(180); registrar.classList.remove('toque');
-        await pausa(250);
-        cenaFalar.classList.remove('ativa'); cenaInicio.classList.add('ativa');
-        await pausa(500);
-        aviso.classList.add('entrou');
-        for (var k = 0; k < lanc.length; k++) { lanc[k].classList.add('entrou'); await pausa(160); }
-        nota.textContent = 'Dos R$ 120,00 do dia, já foram R$ 67,00';
-        barra.style.width = '44.17%';
-        contar(valor, 120, 53, 1100);
-        await pausa(900);
-        dizer(bolha, 'Pronto! Hoje ainda dá R$ 53,00.');
-        await pausa(3600);
-      }
-    }
-    ciclo();
-  }
 
   /* ---------- 2. Simulador: a mesma conta do app, com pote de moedas e balão ---------- */
   function simulador() {
@@ -196,29 +117,13 @@
     calcular();
   }
 
-  /* ---------- 3. Recursos: a tela e o balão acompanham o bloco que está no centro ---------- */
-  function historia() {
-    var blocos = Array.prototype.slice.call(document.querySelectorAll('.bloco'));
-    var telas = Array.prototype.slice.call(document.querySelectorAll('.historia-fone img'));
-    var bolha = $('bolha-hist');
-    if (!blocos.length || !('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (itens) {
-      itens.forEach(function (it) {
-        if (!it.isIntersecting) return;
-        var n = it.target.getAttribute('data-tela');
-        blocos.forEach(function (b) { b.classList.toggle('ativo', b === it.target); });
-        telas.forEach(function (t) { t.classList.toggle('ativa', t.getAttribute('data-tela') === n); });
-        dizer(bolha, it.target.getAttribute('data-fala'));
-      });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    blocos.forEach(function (b) { io.observe(b); });
-  }
-
   /* ---------- 4. Para quem é: abas ---------- */
   function abas() {
     var botoes = Array.prototype.slice.call(document.querySelectorAll('.abas [role="tab"]'));
     if (!botoes.length) return;
+    var grupo = botoes[0].parentElement;
     function abrir(botao, foco) {
+      grupo.style.setProperty('--i', botoes.indexOf(botao));
       botoes.forEach(function (b) {
         var ativo = b === botao;
         b.setAttribute('aria-selected', ativo ? 'true' : 'false');
@@ -246,20 +151,6 @@
     el.textContent = faltam === 1
       ? 'Hoje é o último dia do mês. Quanto sobrou?'
       : 'Hoje é dia ' + h.getDate() + ' e faltam ' + faltam + ' dias de mês. Quanto vai sobrar?';
-  }
-
-  /* ---------- 6. Celular que inclina com o mouse ---------- */
-  function inclinar(area, alvo, gx, gy) {
-    if (reduzir || !ponteiroFino || !area || !alvo) return;
-    area.addEventListener('pointermove', function (e) {
-      var r = area.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      alvo.style.setProperty('--ry', (x * gx).toFixed(2) + 'deg');
-      alvo.style.setProperty('--rx', (-y * gy).toFixed(2) + 'deg');
-    });
-    area.addEventListener('pointerleave', function () {
-      alvo.style.setProperty('--ry', '0deg'); alvo.style.setProperty('--rx', '0deg');
-    });
   }
 
   /* ---------- 7. Rolagem: fio dourado e paralaxe das moedas e balões ---------- */
@@ -318,7 +209,8 @@
       cancelar: { p: 'Como eu cancelo?', t: 'Na própria Google Play, em Assinaturas. Sem ligar para ninguém.' },
       gratis: { p: 'Por que não é grátis?', t: 'Aplicativo grátis costuma viver de anúncio ou de dados dos usuários. O Conta Aí cobra uma assinatura pequena para continuar sem nenhum dos dois.' }
     };
-    var run = 0, fila = Promise.resolve(), restantes = [], comecou = false;
+    var run = 0, fila = Promise.resolve(), restantes = [];
+    var duo = '<div class="duo"><div><small>Primeiros 30 dias</small><b>R$\u00a00,00</b></div><div><small>Depois</small><b>R$\u00a09,90/mês</b></div></div>';
 
     function rolar() { fio.scrollTop = fio.scrollHeight; }
     function msg(cls, html) { var d = document.createElement('div'); d.className = 'm ' + cls; d.innerHTML = html; fio.appendChild(d); rolar(); return d; }
@@ -328,7 +220,7 @@
       var d = msg('app', reduzir ? '' : '<span class="digitando" aria-hidden="true"><i></i><i></i><i></i></span>');
       if (!reduzir) await espera(900 + q.t.length * 8);
       if (meu !== run) return;
-      d.innerHTML = q.t + (q.cartao ? '<div class="duo"><div><small>Primeiros 30 dias</small><b>R$\u00a00,00</b></div><div><small>Depois</small><b>R$\u00a09,90/mês</b></div></div>' : '');
+      d.innerHTML = q.t + (q.cartao ? duo : '');
       rolar();
     }
     function mostrarChips() {
@@ -344,25 +236,17 @@
         chips.appendChild(b);
       });
     }
-    async function iniciar() {
-      var meu = ++run; fila = Promise.resolve();
+    function iniciar() {
+      ++run; fila = Promise.resolve();
       fio.innerHTML = ''; chips.innerHTML = '';
-      restantes = ['gosto', 'incluso', 'anuncio', 'cancelar', 'gratis'];
-      if (!reduzir) await espera(600); if (meu !== run) return;
-      await perguntar('custa', meu); if (meu !== run) return;
-      if (!reduzir) await espera(900); if (meu !== run) return;
-      await perguntar('dia', meu); if (meu !== run) return;
+      restantes = ['dia', 'gosto', 'incluso', 'anuncio', 'cancelar', 'gratis'];
+      msg('eu', R.custa.p);
+      msg('app', R.custa.t + duo);
       mostrarChips();
     }
     if (chat && fio && chips) {
-      $('chat-recomecar').addEventListener('click', function () { comecou = true; iniciar(); });
-      if (!('IntersectionObserver' in window)) { iniciar(); }
-      else {
-        var ioc = new IntersectionObserver(function (e) {
-          if (e[0].isIntersecting && !comecou) { comecou = true; ioc.disconnect(); iniciar(); }
-        }, { threshold: 0.4 });
-        ioc.observe(chat);
-      }
+      $('chat-recomecar').addEventListener('click', iniciar);
+      iniciar();
     }
 
     /* o 9,90 sobe contando e ganha um brilho dourado que passa uma vez */
@@ -393,7 +277,106 @@
     }
   }
 
-  demo(); simulador(); historia(); abas(); agora(); rolagem(); entradas(); preco();
-  inclinar(document.querySelector('.heroi'), document.querySelector('.fone'), 14, 10);
-  inclinar($('recursos'), document.querySelector('.historia-fone .celular'), 10, 8);
+  /* ---------- 10. Experimente: a barra de vidro do app (apertar, arrastar, soltar com mola) ---------- */
+  function vidro() {
+    var barra = $('barra-vidro'), lente = $('lente'), nome = $('aba-atual');
+    if (!barra || !lente) return;
+    var botoes = Array.prototype.slice.call(barra.querySelectorAll('button'));
+    var N = botoes.length, PAD = 4, W = 0, TAB = 0;
+    function medir() { W = barra.offsetWidth; TAB = (W - PAD * 2) / N; }
+    function centro(i) { return PAD + TAB * (i + 0.5); }
+    function limita(v, a, b) { return Math.max(a, Math.min(b, v)); }
+    medir();
+    var aba = 1, preso = false, raf = 0, ultimo = 0, sob = 1;
+    var x = { p: centro(aba), v: 0, t: centro(aba) }, s = { p: 1, v: 0, t: 1 };
+    function mola(m, k, c, dt) { var a = -k * (m.p - m.t) - c * m.v; m.v += a * dt; m.p += m.v * dt; }
+    /* passar das pontas estica como elástico */
+    function alvo(px) {
+      var min = centro(0), max = centro(N - 1);
+      return px < min ? min - (min - px) * 0.3 : px > max ? max + (px - max) * 0.3 : px;
+    }
+    function maisPerto(px) { return limita(Math.round((px - PAD) / TAB - 0.5), 0, N - 1); }
+    function desenhar() {
+      var forca = limita((s.p - 1) / 0.24, 0, 1), vel = Math.abs(x.v);
+      var sx = s.p * (1 + Math.min(vel / 1600, 0.5)), sy = s.p * (1 - Math.min(vel / 3200, 0.22));
+      lente.style.transform = 'translateX(' + (x.p - TAB / 2 - PAD).toFixed(2) + 'px) scale(' + sx.toFixed(4) + ',' + sy.toFixed(4) + ')';
+      lente.style.background = 'rgba(255,255,255,' + (0.4 - 0.3 * forca).toFixed(3) + ')';
+      barra.style.transform = forca > 0.001 ? 'scale(' + (1 + 0.042 * forca).toFixed(4) + ')' : '';
+      var perto = maisPerto(x.p);
+      botoes.forEach(function (b, i) {
+        var lupa = 1 + 0.3 * forca * Math.max(0, 1 - Math.abs(x.p - centro(i)) / (TAB * 0.9));
+        b.style.color = i === perto ? '#0369a1' : '#0f172a';
+        b.firstElementChild.style.transform = 'scale(' + (lupa * (i === perto && !preso ? 1.1 : 1)).toFixed(3) + ')';
+      });
+    }
+    function quadro(t) {
+      var dt = Math.min(0.032, Math.max(0.001, (t - ultimo) / 1000)); ultimo = t;
+      if (preso) { mola(x, 900, 42, dt); mola(s, 420, 13, dt); } else { mola(x, 380, 20, dt); mola(s, 320, 10, dt); }
+      desenhar();
+      var parado = !preso && Math.abs(x.p - x.t) < 0.05 && Math.abs(x.v) < 1 && Math.abs(s.p - s.t) < 0.0005 && Math.abs(s.v) < 0.01;
+      raf = parado ? 0 : requestAnimationFrame(quadro);
+    }
+    function mexer() {
+      if (reduzir) { x.p = x.t; s.p = s.t; x.v = s.v = 0; desenhar(); return; }
+      if (!raf) { ultimo = performance.now(); raf = requestAnimationFrame(quadro); }
+    }
+    function vibrar() { if (navigator.vibrate) try { navigator.vibrate(8); } catch (e) { /* sem vibração, tudo bem */ } }
+    function escolher(i) {
+      aba = i;
+      botoes.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); b.tabIndex = k === i ? 0 : -1; });
+      nome.textContent = botoes[i].textContent.trim();
+    }
+    function localX(e) { var r = barra.getBoundingClientRect(); return (e.clientX - r.left) * (W / r.width); }
+    barra.addEventListener('pointerdown', function (e) {
+      medir(); preso = true; sob = maisPerto(localX(e));
+      try { barra.setPointerCapture(e.pointerId); } catch (err) { /* navegador antigo */ }
+      x.t = alvo(localX(e)); s.t = 1.24; mexer();
+    });
+    barra.addEventListener('pointermove', function (e) {
+      if (!preso) return;
+      x.t = alvo(localX(e));
+      var agoraSob = maisPerto(x.t);
+      if (agoraSob !== sob) { sob = agoraSob; vibrar(); }
+      mexer();
+    });
+    function soltar() {
+      if (!preso) return;
+      preso = false;
+      var i = maisPerto(x.t);
+      if (i !== aba) vibrar();
+      escolher(i); x.t = centro(i); s.t = 1; mexer();
+    }
+    barra.addEventListener('pointerup', soltar);
+    barra.addEventListener('pointercancel', soltar);
+    barra.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var i = limita(aba + d, 0, N - 1);
+      escolher(i); x.t = centro(i); botoes[i].focus(); mexer();
+    });
+    window.addEventListener('resize', function () { medir(); x.p = x.t = centro(aba); desenhar(); });
+    desenhar();
+  }
+
+  /* ---------- 11. Animações contínuas pausam fora da tela; a conversa final entra ao aparecer ---------- */
+  function pausas() {
+    if (!('IntersectionObserver' in window)) return;
+    var alvos = [document.querySelector('.heroi'), document.querySelector('.experimente'), $('bento')].filter(Boolean);
+    var io = new IntersectionObserver(function (itens) {
+      itens.forEach(function (it) { it.target.classList.toggle('parada', !it.isIntersecting); });
+    }, { rootMargin: '80px 0px' });
+    alvos.forEach(function (a) { io.observe(a); });
+
+    var fim = document.querySelector('.conversa-final');
+    if (fim && !reduzir) {
+      fim.classList.add('prep');
+      var iof = new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) { fim.classList.add('entra'); iof.disconnect(); }
+      }, { threshold: 0.5 });
+      iof.observe(fim);
+    }
+  }
+
+  simulador(); abas(); agora(); rolagem(); entradas(); preco(); vidro(); pausas();
 })();

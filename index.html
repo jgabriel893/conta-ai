@@ -17,8 +17,9 @@
 <meta property="og:url" content="https://jgabriel893.github.io/conta-ai/">
 <meta property="og:image" content="https://jgabriel893.github.io/conta-ai/img/og-imagem.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="fonts/Inter-800.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="landing.css?v=bf40b3af">
+<link rel="preload" href="fonts/Bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/app-inicio.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="landing.css?v=521eecbf">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Conta Aí","applicationCategory":"FinanceApplication","operatingSystem":"Android","inLanguage":"pt-BR","description":"Controle de gastos pessoais para Android, com os dados só no celular."}</script>
 </head>
 <body>
@@ -38,65 +39,78 @@
 <div class="fio" aria-hidden="true"><i class="fio-cheio"></i><span class="fio-moeda"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#ffc24b"/><circle cx="24" cy="24" r="22" fill="none" stroke="#d9971a" stroke-width="2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e8a92a" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="20" fill="#9a6200">$</text></svg></span></div>
 
 <main id="inicio">
-<div class="heroi tem-curva"><div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div><div class="blob b3" aria-hidden="true"></div><span class="flut longe" data-v="-0.1" style="left:47%;top:13%;--t:36px;--b:6.5s;--d:-1s"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#ffc24b"/><circle cx="24" cy="24" r="22" fill="none" stroke="#d9971a" stroke-width="2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e8a92a" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="20" fill="#9a6200">$</text></svg></span><span class="flut " data-v="-0.22" style="left:93%;top:9%;--t:54px;--b:7.5s;--d:-3s"><svg width="64" height="56" viewBox="0 0 64 56" aria-hidden="true"><path d="M10 4h44a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H30L16 54V42h-6a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="#fff" fill-opacity=".92"/><circle cx="20" cy="23" r="3.2" fill="#0ea5e9"/><circle cx="32" cy="23" r="3.2" fill="#0ea5e9"/><circle cx="44" cy="23" r="3.2" fill="#0ea5e9"/></svg></span><span class="flut so-desk" data-v="-0.16" style="left:4%;top:76%;--t:46px;--b:5.5s;--d:-2s"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#ffc24b"/><circle cx="24" cy="24" r="22" fill="none" stroke="#d9971a" stroke-width="2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e8a92a" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="20" fill="#9a6200">$</text></svg></span><span class="flut so-desk longe" data-v="-0.08" style="left:39%;top:84%;--t:44px;--b:8s;--d:-4s"><svg width="64" height="56" viewBox="0 0 64 56" aria-hidden="true"><path d="M54 4H10a8 8 0 0 0-8 8v22a8 8 0 0 0 8 8h24l14 12V42h6a8 8 0 0 0 8-8V12a8 8 0 0 0-8-8z" fill="#38bdf8" fill-opacity=".9"/><circle cx="20" cy="23" r="3.2" fill="#fff"/><circle cx="32" cy="23" r="3.2" fill="#fff"/><circle cx="44" cy="23" r="3.2" fill="#fff"/></svg></span><span class="flut " data-v="-0.26" style="left:90%;top:70%;--t:30px;--b:6s;--d:-5s"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#ffc24b"/><circle cx="24" cy="24" r="22" fill="none" stroke="#d9971a" stroke-width="2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e8a92a" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="20" fill="#9a6200">$</text></svg></span><span class="flut so-desk longe" data-v="-0.05" style="left:27%;top:7%;--t:34px;--b:9s;--d:-6s"><svg width="64" height="56" viewBox="0 0 64 56" aria-hidden="true"><path d="M10 4h44a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H30L16 54V42h-6a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="#fff" fill-opacity=".92"/><circle cx="20" cy="23" r="3.2" fill="#0ea5e9"/><circle cx="32" cy="23" r="3.2" fill="#0ea5e9"/><circle cx="44" cy="23" r="3.2" fill="#0ea5e9"/></svg></span>
+<div class="heroi tem-curva">
+  <svg class="mancha m1" width="640" height="640" viewBox="0 0 200 200" aria-hidden="true"><path d="M45 30C90-5 170 10 182 70s-12 110-77 116S10 160 16 100s4-50 29-70z"/></svg>
+  <svg class="mancha m2" width="360" height="360" viewBox="0 0 200 200" aria-hidden="true"><path d="M60 20c50-20 130 10 120 80s-60 95-110 80S5 120 20 70s20-42 40-50z"/></svg>
   <div class="contido">
-    <div>
-      <h1>Saiba <em>quanto</em> sobra, antes que o mês acabe.</h1>
-      <p class="sub">Diga o gasto, fotografe o recibo ou digite. O Conta Aí mostra quanto você ainda pode gastar hoje, e tudo fica só no seu celular.</p>
+    <div class="heroi-texto">
       <p class="agora"><span id="agora-texto">Quanto vai sobrar neste mês?</span></p>
+      <h1>Saiba <span class="destaque">quanto sobra<svg class="risco" width="320" height="24" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 15C70 4 150 3 210 9s90 11 106 1"/></svg></span>, antes que o mês acabe.</h1>
+      <p class="sub">Fale o gasto, fotografe o recibo ou digite. O Conta Aí mostra quanto você ainda pode gastar hoje, e tudo fica só no seu celular.</p>
       <div class="acoes">
-        <span class="botao cheio" aria-disabled="true">Em breve na Google Play</span>
-        <a class="botao vazado" href="#simulador">Fazer a conta do mês</a>
+        <span class="botao ouro" aria-disabled="true"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg>Em breve na Google Play</span>
+        <a class="botao vidro" href="#simulador">Fazer a conta do mês<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
       </div>
       <ul class="fichas"><li>30 dias grátis</li><li>Sem cadastro</li><li>Sem anúncios</li><li>Funciona sem internet</li></ul>
     </div>
 
-    <div class="demo" id="demo" role="img" aria-label="Demonstração: o app entende a frase “30 de gasolina, 12 de pão e 25 de sorvete”, separa três gastos com a categoria de cada um e mostra quanto ainda pode gastar hoje.">
-      <div class="fone-palco"><div class="fone" aria-hidden="true">
+    <div class="palco" role="img" aria-label="Demonstração com valores de exemplo: a pessoa pergunta quanto pode gastar hoje, o app responde R$ 29,09; ela fala “30 de gasolina e 12 de pão” e o app anota os dois gastos.">
+      <div class="fone" aria-hidden="true">
         <div class="tela">
-          <div class="cena falar ativa" id="cena-falar">
-            <div class="barra">Falar ou digitar</div>
-            <div class="corpo">
-              <div class="fala"><span id="fala-texto">30 de gasolina, 12 de pão e 25 de sorvete</span><span class="cursor"></span></div>
-              <div class="mic-linha" id="mic-linha">
-                <div class="mic"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
-                <div class="onda"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <span class="estado" id="mic-estado">Entendi 3 gastos</span>
-              </div>
-              <ul class="itens" id="itens">
-                <li class="entrou"><span class="ok"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Gasolina</b><span class="chip transporte">Transporte</span></div><span class="valor">R$ 30,00</span></li>
-                <li class="entrou"><span class="ok"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Pão</b><span class="chip alimentacao">Alimentação</span></div><span class="valor">R$ 12,00</span></li>
-                <li class="entrou"><span class="ok"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span><div><b>Sorvete</b><span class="chip alimentacao">Alimentação</span></div><span class="valor">R$ 25,00</span></li>
-              </ul>
-              <div class="registrar entrou" id="registrar">Registrar 3 gastos</div>
-            </div>
-          </div>
-          <div class="cena" id="cena-inicio">
-            <div class="barra">Conta Aí</div>
-            <div class="corpo">
-              <div class="cartao-hoje">
-                <span class="rot">Pode gastar hoje</span>
-                <strong id="hoje-valor">R$ 53,00</strong>
-                <div class="trilho"><i id="hoje-barra" style="width:44%"></i></div>
-                <small id="hoje-nota">Dos R$ 120,00 do dia, já foram R$ 67,00</small>
-              </div>
-              <div class="aviso-ok entrou" id="aviso-ok">3 gastos registrados</div>
-              <h4>Hoje</h4>
-              <ul class="lanc" id="lanc">
-                <li class="entrou"><span>Gasolina</span><span>R$ 30,00</span></li>
-                <li class="entrou"><span>Pão</span><span>R$ 12,00</span></li>
-                <li class="entrou"><span>Sorvete</span><span>R$ 25,00</span></li>
-              </ul>
-            </div>
+          <img src="img/app-inicio.webp" width="600" height="1299" alt="" fetchpriority="high">
+          <div class="folha">
+            <i class="alca"></i>
+            <div class="folha-topo"><b>Falar ou digitar</b><span class="mic"><svg width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span></div>
+            <div class="frase"><span class="digita">30 de gasolina e 12 de pão</span></div>
+            <div class="item i1"><span><b>Gasolina</b><small>Transporte</small></span><em>−R$ 30,00</em></div>
+            <div class="item i2"><span><b>Pão</b><small>Alimentação</small></span><em>−R$ 12,00</em></div>
+            <div class="registrar">Registrar 2 gastos</div>
           </div>
         </div>
-      </div></div>
-      <div class="bolha " id="bolha-demo" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Pronto! Hoje ainda dá R$ 53,00.</span></div>
-      <p class="demo-nota">Demonstração com valores de exemplo.</p>
+      </div>
+      <div class="conversa" aria-hidden="true">
+        <p class="fala eu f1">Quanto posso gastar hoje?</p>
+        <p class="fala app f2"><img src="img/icone-192.png" width="26" height="26" alt="">Hoje dá R$ 29,09. Quer anotar algo?</p>
+        <p class="fala eu f3">30 de gasolina e 12 de pão</p>
+        <p class="fala app f4"><img src="img/icone-192.png" width="26" height="26" alt="">Anotei os dois. Confere aí.</p>
+      </div>
     </div>
   </div>
-  <svg width="1440" height="60" class="curva baixo" style="color:var(--superficie)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
+  <svg width="1440" height="60" class="curva baixo" style="color:var(--fundo)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
 </div>
+
+<section id="experimente" class="experimente tem-curva">
+  <div class="contido">
+    <div class="exp-fone">
+      <div class="fone pequeno">
+        <div class="tela">
+          <div class="rolo" aria-hidden="true"><img src="img/app-transacoes-longa.webp" width="600" height="2813" alt="" loading="lazy"></div>
+          <div class="barra-vidro" id="barra-vidro" role="tablist" aria-label="Barra de abas de demonstração (apertar e arrastar)">
+            <span class="lente" id="lente" aria-hidden="true"></span>
+            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg><span>Início</span></button>
+            <button role="tab" aria-selected="true" tabindex="0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg><span>Transações</span></button>
+            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg><span>Metas</span></button>
+            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3zM3 7l12-4v4M16 13h2"/></svg><span>Contas</span></button>
+            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg><span>Mais</span></button>
+          </div>
+        </div>
+      </div>
+      <p class="anota" aria-hidden="true"><svg width="64" height="40" viewBox="0 0 64 40"><path d="M60 8C40 2 18 10 8 30M8 30L6 18M8 30l11-4"/></svg>aperta e arrasta</p>
+    </div>
+    <div class="exp-texto">
+      <p class="sobretitulo">Experimente aqui</p>
+      <h2>Aperte, arraste e solte. <span class="destaque-azul">É assim no app.</span></h2>
+      <p>A barra de baixo é de vidro: a lista passa por trás dela. Segure e leve o dedo para os lados: a lente segue, estica com a velocidade e encaixa na aba quando você solta.</p>
+      <ol class="passos">
+        <li>Vibra de leve a cada aba que a lente atravessa.</li>
+        <li>No celular, a borda do vidro entorta o que passa atrás.</li>
+        <li>Com “remover animações” ligado, a troca é direta.</li>
+      </ol>
+      <p class="aba-atual" aria-live="polite">Aba escolhida: <strong id="aba-atual">Transações</strong></p>
+    </div>
+  </div>
+  <svg width="1440" height="60" class="curva baixo esp" style="color:var(--superficie)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
+</section>
 
 <section id="simulador" class="tem-curva alt"><svg width="1440" height="60" class="curva baixo" style="color:var(--fundo)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
   <div class="contido">
@@ -152,59 +166,47 @@
 
 <section class="tem-curva" id="recursos"><svg width="1440" height="60" class="curva baixo esp" style="color:var(--azul-900)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
   <div class="contido">
-    <div class="titulo"><h2>Do lançamento à decisão, sem planilha</h2><p>Telas reais do app, na ordem em que você usa.</p></div>
-    <div class="historia-grade">
-      <div class="historia-fone" aria-hidden="true">
-        <div class="bolha-reserva"><div class="bolha" id="bolha-hist" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>30 de gasolina e 12 de pão. Anotei os dois.</span></div></div>
-        <div class="celular">
-          <img class="ativa" data-tela="0" src="img/tela-02-recibo.webp" width="540" height="1080" alt="">
-          <img data-tela="1" src="img/tela-04-contas.webp" width="540" height="1080" alt="" loading="lazy">
-          <img data-tela="2" src="img/tela-05-metas.webp" width="540" height="1080" alt="" loading="lazy">
-          <img data-tela="3" src="img/tela-06-comparativo.webp" width="540" height="1080" alt="" loading="lazy">
+    <div class="titulo"><h2>Do lançamento à decisão, <span class="destaque-azul">sem planilha</span></h2><p>Tudo o que o app faz, numa olhada.</p></div>
+    <div class="bento" id="bento">
+      <article class="cartao-r largo escuro">
+        <div class="cr-texto"><h3>Lance falando</h3><p>Uma frase vira vários lançamentos, já com a categoria. A voz é entendida no próprio celular.</p></div>
+        <div class="cr-demo voz" aria-hidden="true">
+          <span class="balao-eu"><span class="digita">30 de gasolina e 12 de pão</span></span>
+          <span class="linha l1"><span>Gasolina · Transporte</span><b>−R$ 30,00</b></span>
+          <span class="linha l2"><span>Pão · Alimentação</span><b>−R$ 12,00</b></span>
         </div>
-      </div>
-      <div class="historia-passos">
-        <article class="bloco ativo" data-tela="0" data-fala="30 de gasolina e 12 de pão. Anotei os dois.">
-          <figure class="so-celular"><div class="celular"><img src="img/tela-02-recibo.webp" width="540" height="1080" loading="lazy" alt="Formulário de lançamento preenchido a partir da foto de um recibo"></div><div class="bolha cima no-bloco" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>30 de gasolina e 12 de pão. Anotei os dois.</span></div></figure>
-          <h3>Lance do jeito mais rápido</h3>
-          <p>Cada gasto leva poucos segundos, e você escolhe como entrar com ele.</p>
-          <ul>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Falando.</strong> “30 de gasolina e 12 de pão” vira dois lançamentos, que você confere antes de registrar.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Fotografando o recibo.</strong> O app lê valor, data e estabelecimento no próprio celular.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Pelas notificações do banco.</strong> Opcional: compras e Pix dos apps que você escolher esperam a sua confirmação.</span></li>
-          </ul>
-        </article>
-        <article class="bloco" data-tela="1" data-fala="A conta de luz vence dia 5. Já te avisei.">
-          <figure class="so-celular"><div class="celular"><img src="img/tela-04-contas.webp" width="540" height="1080" loading="lazy" alt="Contas fixas com vencimentos e as já pagas"></div><div class="bolha cima no-bloco" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>A conta de luz vence dia 5. Já te avisei.</span></div></figure>
-          <h3>Nada vence sem aviso</h3>
-          <p>Contas fixas, parcelas e cartões ficam em um lugar só, com lembrete antes do vencimento.</p>
-          <ul>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Contas fixas e parcelamentos</strong> que entram sozinhos no dia certo.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Cartões de crédito com fatura</strong>, saldo das contas e transferências entre elas.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Salário e aluguel automáticos</strong>, sem digitar todo mês.</span></li>
-          </ul>
-        </article>
-        <article class="bloco" data-tela="2" data-fala="Mercado chegou em 80% da meta. Segura aí.">
-          <figure class="so-celular"><div class="celular"><img src="img/tela-05-metas.webp" width="540" height="1080" loading="lazy" alt="Meta de economia, desafio diário, objetivos e metas por categoria"></div><div class="bolha cima no-bloco" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Mercado chegou em 80% da meta. Segura aí.</span></div></figure>
-          <h3>Metas que avisam na hora certa</h3>
-          <p>Defina o limite e deixe o app vigiar por você.</p>
-          <ul>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Limite por categoria</strong> com aviso aos 80% e quando estoura. A sobra pode passar para o mês seguinte.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Alerta de gasto fora do normal</strong>, comparando com o seu próprio histórico.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Objetivos com prazo</strong>, como a viagem ou a reserva de emergência.</span></li>
-          </ul>
-        </article>
-        <article class="bloco" data-tela="3" data-fala="Lazer ficou menor que no mês passado. Boa!">
-          <figure class="so-celular"><div class="celular"><img src="img/tela-06-comparativo.webp" width="540" height="1080" loading="lazy" alt="Comparativo do mês atual com o anterior, por categoria"></div><div class="bolha cima no-bloco" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Lazer ficou menor que no mês passado. Boa!</span></div></figure>
-          <h3>Entenda para onde foi o dinheiro</h3>
-          <p>Compare, preveja e leve os números para onde precisar.</p>
-          <ul>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Comparativo com o mês anterior</strong> e previsão de como o mês deve fechar.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Divisão de despesas</strong>: quem deve a quem, e acerto com um toque.</span></li>
-            <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Planilha e backup</strong>: importe e exporte em Excel ou CSV, e restaure num celular novo.</span></li>
-          </ul>
-        </article>
-      </div>
+      </article>
+      <article class="cartao-r creme">
+        <div class="cr-demo recibo" aria-hidden="true">
+          <span class="papel"><b>MERCADO BOM PREÇO</b><span>ARROZ 5KG ... 27,90</span><span>FEIJÃO ....... 8,49</span><span>CAFÉ 500G ... 19,90</span><span>…</span><b class="achou">TOTAL ...... 142,35</b><i class="scan"></i></span>
+        </div>
+        <h3>Foto do recibo</h3><p>O app lê valor, data e loja, e você confere antes de salvar. Tudo no aparelho.</p>
+      </article>
+      <article class="cartao-r">
+        <div class="cr-demo aviso" aria-hidden="true"><span class="notif"><img src="img/icone-192.png" width="34" height="34" alt=""><span><b>Água e esgoto vence em 3 dias</b><small>R$ 78,40 · toque para marcar como paga</small></span></span></div>
+        <h3>Nada vence sem aviso</h3><p>Contas fixas, parcelas e faturas lembradas a tempo, sem multa por esquecimento.</p>
+      </article>
+      <article class="cartao-r">
+        <div class="cr-demo meta" aria-hidden="true"><svg width="104" height="104" viewBox="0 0 104 104"><circle cx="52" cy="52" r="42" class="fundo-anel"/><circle cx="52" cy="52" r="42" class="anel" transform="rotate(-90 52 52)"/></svg><span><b>Lazer</b><small>R$ 240 de R$ 300</small><em>80%: hora de segurar</em></span></div>
+        <h3>Metas que avisam</h3><p>Limite por categoria com aviso aos 80% e quando estoura. A sobra passa para o mês seguinte.</p>
+      </article>
+      <article class="cartao-r">
+        <div class="cr-demo fatura" aria-hidden="true"><span class="fat-topo"><b>Cartão de crédito</b><small>vence dia 10</small></span><span class="trilho-f"><i></i></span><small>Fatura atual <b>R$ 273,90</b> · R$ 3.726 livres</small></div>
+        <h3>Cartão sem susto</h3><p>Fatura, limite e parcelamentos num lugar só, antes de passar mais uma compra.</p>
+      </article>
+      <article class="cartao-r largo creme com-fone">
+        <div class="cr-texto"><h3>Entenda para onde foi o dinheiro</h3><p>Este mês contra o anterior, categoria por categoria, e a previsão de como o mês fecha.</p>
+          <div class="barrinhas" aria-hidden="true"><i style="--h:52%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:100%" class="atual"></i></div></div>
+        <div class="meio-fone"><img src="img/app-comparativo.webp" width="600" height="1299" loading="lazy" alt="Tela Comparativo do Conta Aí: receitas, gastos e saldo contra o mês anterior"></div>
+      </article>
+      <article class="cartao-r">
+        <div class="cr-demo dividir" aria-hidden="true"><span class="avatar">A</span><span class="seta-dev"><svg width="64" height="16" viewBox="0 0 64 16"><path d="M2 8h58M52 2l8 6-8 6"/></svg>te deve</span><span class="valor-dev">+R$ 235,00</span></div>
+        <h3>Divida sem planilha</h3><p>Quem te deve e a quem você deve, com acerto em um toque.</p>
+      </article>
+      <article class="cartao-r inteiro">
+        <div class="cr-demo planilha" aria-hidden="true"><span class="arquivo">.xlsx</span><svg class="pasta" width="72" height="64" viewBox="0 0 72 64"><path d="M4 14a6 6 0 0 1 6-6h16l6 7h30a6 6 0 0 1 6 6v33a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#f2b01e"/><path d="M4 24h64v30a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#f5c451"/></svg></div>
+        <div class="cr-texto"><h3>Planilha e backup, quando quiser</h3><p>Exporte o mês em Excel, importe de .xlsx ou .csv, e guarde uma cópia dos seus dados numa pasta sua. Trocou de celular? Restaura e pronto.</p></div>
+      </article>
     </div>
   </div>
 </section>
@@ -245,7 +247,8 @@
 <section class="tem-curva" id="para-quem"><svg width="1440" height="60" class="curva baixo esp" style="color:var(--superficie)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
   <div class="contido">
     <div class="titulo"><h2>Feito para a sua rotina</h2><p>Escolha o seu caso e veja o que mais ajuda.</p></div>
-    <div class="abas" role="tablist" aria-label="Perfis de uso">
+    <div class="abas" role="tablist" aria-label="Perfis de uso" style="--i:0">
+      <span class="trilho-aba" aria-hidden="true"></span>
       <button role="tab" id="aba-casa" aria-selected="true" aria-controls="painel-casa">Divido a casa</button>
       <button role="tab" id="aba-renda" aria-selected="false" aria-controls="painel-renda" tabindex="-1">Minha renda varia</button>
       <button role="tab" id="aba-cartao" aria-selected="false" aria-controls="painel-cartao" tabindex="-1">Vivo no cartão</button>
@@ -255,12 +258,12 @@
         <h3>Contas da casa sem briga no fim do mês</h3>
         <p>Cada um anota o que pagou. O app mostra quem deve a quem.</p>
         <ul>
-          <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Divisão de despesas</strong> com acerto de contas em um toque.</span></li>
+          <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Divisão de despesas</strong> com acerto em um toque.</span></li>
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Aluguel, luz e internet</strong> lançados sozinhos, com aviso antes de vencer.</span></li>
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Meta por categoria</strong>, como mercado e delivery.</span></li>
         </ul>
       </div>
-      <div class="celular"><img src="img/tela-04-contas.webp" width="540" height="1080" loading="lazy" alt="Contas fixas com vencimentos e as já pagas"></div>
+      <figure><div class="celular"><img src="img/app-divisao.webp" width="600" height="1299" loading="lazy" alt="Divisão de despesas: Ana te deve R$ 235,00 e você deve R$ 42,50 ao Léo"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>A Ana te deve R$ 235,00.</span></figcaption></figure>
     </div>
     <div class="painel" role="tabpanel" id="painel-renda" aria-labelledby="aba-renda" hidden>
       <div>
@@ -272,7 +275,7 @@
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Exportação em Excel</strong> para levar ao contador ou à sua planilha.</span></li>
         </ul>
       </div>
-      <div class="celular"><img src="img/tela-06-comparativo.webp" width="540" height="1080" loading="lazy" alt="Comparativo do mês atual com o anterior, por categoria"></div>
+      <figure><div class="celular"><img src="img/app-comparativo.webp" width="600" height="1299" loading="lazy" alt="Comparativo do mês atual com o anterior: receitas, gastos, saldo e categorias"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Receitas 13% acima de setembro.</span></figcaption></figure>
     </div>
     <div class="painel" role="tabpanel" id="painel-cartao" aria-labelledby="aba-cartao" hidden>
       <div>
@@ -284,7 +287,7 @@
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Campo “Pago com”</strong> em cada gasto, para separar cartão, Pix e dinheiro.</span></li>
         </ul>
       </div>
-      <div class="celular"><img src="img/tela-03-transacoes.webp" width="540" height="1080" loading="lazy" alt="Lista de transações do mês com categorias e valores"></div>
+      <figure><div class="celular"><img src="img/app-cartoes.webp" width="600" height="1299" loading="lazy" alt="Contas e cartões: saldo das contas e fatura atual do cartão de crédito"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Fatura de R$ 273,90 vence dia 10.</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -293,14 +296,14 @@
   <div class="contido">
     <div class="preco-chat">
       <div>
-        <h2>Pergunte o que quiser sobre o preço.</h2>
+        <h2>Pergunte o que quiser <span class="destaque-azul">sobre o preço.</span></h2>
         <p class="lead">O Conta Aí responde como no resto do app: direto e sem rodeio.</p>
         <div class="preco-bloco">
           <p class="depois">30 dias grátis. Depois:</p>
           <p class="valor"><span class="moeda">R$</span><span class="numero" id="preco-num">9,90</span><span class="por">/mês</span></p>
           <p class="dia">Menos de R$&nbsp;0,40 por dia.</p>
         </div>
-        <span class="botao escuro" aria-disabled="true">Em breve na Google Play</span>
+        <span class="botao escuro" aria-disabled="true"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg>Em breve na Google Play</span>
         <p class="fino">A cobrança é feita pela Google Play. Se cancelar durante o teste, na própria loja, você não paga nada.</p>
         <button type="button" class="recomecar" id="chat-recomecar">Recomeçar a conversa</button>
       </div>
@@ -330,10 +333,13 @@
 
 <section class="final tem-curva"><span class="flut longe" data-v="-0.12" style="left:8%;top:22%;--t:40px;--b:6s;--d:-1s"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#ffc24b"/><circle cx="24" cy="24" r="22" fill="none" stroke="#d9971a" stroke-width="2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e8a92a" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="20" fill="#9a6200">$</text></svg></span><span class="flut " data-v="-0.2" style="left:88%;top:30%;--t:52px;--b:7.5s;--d:-2s"><svg width="64" height="56" viewBox="0 0 64 56" aria-hidden="true"><path d="M10 4h44a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H30L16 54V42h-6a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8z" fill="#fff" fill-opacity=".92"/><circle cx="20" cy="23" r="3.2" fill="#0ea5e9"/><circle cx="32" cy="23" r="3.2" fill="#0ea5e9"/><circle cx="44" cy="23" r="3.2" fill="#0ea5e9"/></svg></span><span class="flut so-desk" data-v="-0.18" style="left:80%;top:72%;--t:28px;--b:5.5s;--d:-3s"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#ffc24b"/><circle cx="24" cy="24" r="22" fill="none" stroke="#d9971a" stroke-width="2"/><circle cx="24" cy="24" r="15.5" fill="none" stroke="#e8a92a" stroke-width="2"/><text x="24" y="31" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="20" fill="#9a6200">$</text></svg></span><span class="flut so-desk" data-v="-0.1" style="left:12%;top:70%;--t:42px;--b:8s;--d:-4s"><svg width="64" height="56" viewBox="0 0 64 56" aria-hidden="true"><path d="M54 4H10a8 8 0 0 0-8 8v22a8 8 0 0 0 8 8h24l14 12V42h6a8 8 0 0 0 8-8V12a8 8 0 0 0-8-8z" fill="#38bdf8" fill-opacity=".9"/><circle cx="20" cy="23" r="3.2" fill="#fff"/><circle cx="32" cy="23" r="3.2" fill="#fff"/><circle cx="44" cy="23" r="3.2" fill="#fff"/></svg></span><svg width="1440" height="60" class="curva cima" style="color:var(--fundo)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
   <div class="contido">
-    <h2>Chegou a hora de saber quanto sobra.</h2>
+    <h2>Chegou a hora de saber <span class="destaque">quanto sobra.</span></h2>
     <p>O Conta Aí está chegando à Google Play para Android, com 30 dias grátis para você testar.</p>
-    <div class="bolha pop centro" aria-hidden="true"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Bora saber quanto sobra?</span></div>
-    <div class="acoes"><span class="botao cheio" aria-disabled="true">Em breve na Google Play</span></div>
+    <div class="conversa-final" aria-hidden="true">
+      <p class="fala eu">Bora saber quanto sobra?</p>
+      <p class="fala app"><img src="img/icone-192.png" width="26" height="26" alt="">Bora! Chego em breve na Google Play.</p>
+    </div>
+    <div class="acoes"><span class="botao ouro" aria-disabled="true"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l15 9-15 9z"/></svg>Em breve na Google Play</span></div>
   </div>
 </section>
 </main>
@@ -345,6 +351,6 @@
     <small>Google Play e o logotipo do Google Play são marcas da Google LLC. Android é marca da Google LLC.</small>
   </div>
 </footer>
-<script src="landing.js?v=e1bc193b" defer></script>
+<script src="landing.js?v=96b214d9" defer></script>
 </body>
 </html>
