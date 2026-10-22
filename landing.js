@@ -150,7 +150,7 @@
     var faltam = ultimo - h.getDate() + 1;
     el.textContent = faltam === 1
       ? 'Hoje é o último dia do mês. Quanto sobrou?'
-      : 'Hoje é dia ' + h.getDate() + ' e faltam ' + faltam + ' dias de mês. Quanto vai sobrar?';
+      : 'Hoje é dia ' + h.getDate() + ' e restam ' + faltam + ' dias de mês, contando hoje. Quanto vai sobrar?';
   }
 
   /* ---------- 7. Rolagem: fio dourado e paralaxe das moedas e balões ---------- */
