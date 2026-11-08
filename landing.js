@@ -277,86 +277,50 @@
     }
   }
 
-  /* ---------- 10. Experimente: a barra de vidro do app (apertar, arrastar, soltar com mola) ---------- */
-  function vidro() {
-    var barra = $('barra-vidro'), lente = $('lente'), nome = $('aba-atual');
-    if (!barra || !lente) return;
-    var botoes = Array.prototype.slice.call(barra.querySelectorAll('button'));
-    var N = botoes.length, PAD = 4, W = 0, TAB = 0;
-    function medir() { W = barra.offsetWidth; TAB = (W - PAD * 2) / N; }
-    function centro(i) { return PAD + TAB * (i + 0.5); }
-    function limita(v, a, b) { return Math.max(a, Math.min(b, v)); }
-    medir();
-    var aba = 1, preso = false, raf = 0, ultimo = 0, sob = 1;
-    var x = { p: centro(aba), v: 0, t: centro(aba) }, s = { p: 1, v: 0, t: 1 };
-    function mola(m, k, c, dt) { var a = -k * (m.p - m.t) - c * m.v; m.v += a * dt; m.p += m.v * dt; }
-    /* passar das pontas estica como elástico */
-    function alvo(px) {
-      var min = centro(0), max = centro(N - 1);
-      return px < min ? min - (min - px) * 0.3 : px > max ? max + (px - max) * 0.3 : px;
+  /* ---------- 10. Experimente: telas de verdade do app, uma por aba (toque na aba ou na barra do celular) ---------- */
+  function telasReais() {
+    var tela = $('tela-real'), lista = $('abas-real');
+    if (!tela || !lista) return;
+    var fotos = Array.prototype.slice.call(tela.querySelectorAll('img.t'));
+    var abas = Array.prototype.slice.call(lista.querySelectorAll('[role="tab"]'));
+    function escolher(i, foco) {
+      fotos.forEach(function (f, k) { f.classList.toggle('on', k === i); });
+      abas.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); b.tabIndex = k === i ? 0 : -1; });
+      if (foco) abas[i].focus();
     }
-    function maisPerto(px) { return limita(Math.round((px - PAD) / TAB - 0.5), 0, N - 1); }
-    function desenhar() {
-      var forca = limita((s.p - 1) / 0.24, 0, 1), vel = Math.abs(x.v);
-      var sx = s.p * (1 + Math.min(vel / 1600, 0.5)), sy = s.p * (1 - Math.min(vel / 3200, 0.22));
-      lente.style.transform = 'translateX(' + (x.p - TAB / 2 - PAD).toFixed(2) + 'px) scale(' + sx.toFixed(4) + ',' + sy.toFixed(4) + ')';
-      lente.style.background = 'rgba(255,255,255,' + (0.4 - 0.3 * forca).toFixed(3) + ')';
-      barra.style.transform = forca > 0.001 ? 'scale(' + (1 + 0.042 * forca).toFixed(4) + ')' : '';
-      var perto = maisPerto(x.p);
-      botoes.forEach(function (b, i) {
-        var lupa = 1 + 0.3 * forca * Math.max(0, 1 - Math.abs(x.p - centro(i)) / (TAB * 0.9));
-        b.style.color = i === perto ? '#0369a1' : '#0f172a';
-        b.firstElementChild.style.transform = 'scale(' + (lupa * (i === perto && !preso ? 1.1 : 1)).toFixed(3) + ')';
-      });
-    }
-    function quadro(t) {
-      var dt = Math.min(0.032, Math.max(0.001, (t - ultimo) / 1000)); ultimo = t;
-      if (preso) { mola(x, 900, 42, dt); mola(s, 420, 13, dt); } else { mola(x, 380, 20, dt); mola(s, 320, 10, dt); }
-      desenhar();
-      var parado = !preso && Math.abs(x.p - x.t) < 0.05 && Math.abs(x.v) < 1 && Math.abs(s.p - s.t) < 0.0005 && Math.abs(s.v) < 0.01;
-      raf = parado ? 0 : requestAnimationFrame(quadro);
-    }
-    function mexer() {
-      if (reduzir) { x.p = x.t; s.p = s.t; x.v = s.v = 0; desenhar(); return; }
-      if (!raf) { ultimo = performance.now(); raf = requestAnimationFrame(quadro); }
-    }
-    function vibrar() { if (navigator.vibrate) try { navigator.vibrate(8); } catch (e) { /* sem vibração, tudo bem */ } }
-    function escolher(i) {
-      aba = i;
-      botoes.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); b.tabIndex = k === i ? 0 : -1; });
-      nome.textContent = botoes[i].textContent.trim();
-    }
-    function localX(e) { var r = barra.getBoundingClientRect(); return (e.clientX - r.left) * (W / r.width); }
-    barra.addEventListener('pointerdown', function (e) {
-      medir(); preso = true; sob = maisPerto(localX(e));
-      try { barra.setPointerCapture(e.pointerId); } catch (err) { /* navegador antigo */ }
-      x.t = alvo(localX(e)); s.t = 1.24; mexer();
+    abas.forEach(function (b, i) { b.addEventListener('click', function () { escolher(i, false); }); });
+    Array.prototype.forEach.call(tela.querySelectorAll('.toques button'), function (b) {
+      b.addEventListener('click', function () { escolher(parseInt(b.getAttribute('data-i'), 10), false); });
     });
-    barra.addEventListener('pointermove', function (e) {
-      if (!preso) return;
-      x.t = alvo(localX(e));
-      var agoraSob = maisPerto(x.t);
-      if (agoraSob !== sob) { sob = agoraSob; vibrar(); }
-      mexer();
-    });
-    function soltar() {
-      if (!preso) return;
-      preso = false;
-      var i = maisPerto(x.t);
-      if (i !== aba) vibrar();
-      escolher(i); x.t = centro(i); s.t = 1; mexer();
-    }
-    barra.addEventListener('pointerup', soltar);
-    barra.addEventListener('pointercancel', soltar);
-    barra.addEventListener('keydown', function (e) {
-      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    lista.addEventListener('keydown', function (e) {
+      var atual = abas.indexOf(document.activeElement);
+      if (atual < 0) return;
+      var d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
       if (!d) return;
       e.preventDefault();
-      var i = limita(aba + d, 0, N - 1);
-      escolher(i); x.t = centro(i); botoes[i].focus(); mexer();
+      escolher(Math.max(0, Math.min(abas.length - 1, atual + d)), true);
     });
-    window.addEventListener('resize', function () { medir(); x.p = x.t = centro(aba); desenhar(); });
-    desenhar();
+  }
+
+  /* ---------- 10b. "Ver a tela no app": abre a tela real da função numa janela ---------- */
+  function verTelas() {
+    var dlg = $('tela-dialogo'), img = $('td-img'), tit = $('td-titulo');
+    var botoes = document.querySelectorAll('.ver-tela');
+    if (!dlg || !img || !botoes.length || typeof dlg.showModal !== 'function') {
+      Array.prototype.forEach.call(botoes, function (b) { b.hidden = true; }); /* navegador sem <dialog>: some o botão */
+      return;
+    }
+    var origem = null;
+    Array.prototype.forEach.call(botoes, function (b) {
+      b.addEventListener('click', function () {
+        origem = b;
+        img.src = b.getAttribute('data-img'); img.alt = b.getAttribute('data-alt') || '';
+        tit.textContent = b.getAttribute('data-titulo') || '';
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); }); /* clicar fora fecha */
+    dlg.addEventListener('close', function () { if (origem) origem.focus(); });
   }
 
   /* ---------- 11. Animações contínuas pausam fora da tela; a conversa final entra ao aparecer ---------- */
@@ -378,5 +342,5 @@
     }
   }
 
-  simulador(); abas(); agora(); rolagem(); entradas(); preco(); vidro(); pausas();
+  simulador(); abas(); agora(); rolagem(); entradas(); preco(); telasReais(); verTelas(); pausas();
 })();

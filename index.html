@@ -18,8 +18,8 @@
 <meta property="og:image" content="https://jgabriel893.github.io/conta-ai/img/og-imagem.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/Bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/app-inicio.webp" as="image" type="image/webp">
-<link rel="stylesheet" href="landing.css?v=9e578cfc">
+<link rel="preload" href="img/app-aba-inicio.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="landing.css?v=50ffd561">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Conta Aí","applicationCategory":"FinanceApplication","operatingSystem":"Android","inLanguage":"pt-BR","description":"Controle de gastos pessoais para Android, com os dados só no celular."}</script>
 </head>
 <body>
@@ -56,8 +56,8 @@
 
     <div class="palco" role="img" aria-label="Demonstração com valores de exemplo: a pessoa pergunta quanto pode gastar hoje, o app responde R$ 29,09; ela fala “30 de gasolina e 12 de pão” e o app anota os dois gastos.">
       <div class="fone" aria-hidden="true">
-        <div class="tela">
-          <img src="img/app-inicio.webp" width="600" height="1299" alt="" fetchpriority="high">
+        <div class="tela real">
+          <img src="img/app-aba-inicio.webp" width="540" height="1080" alt="" fetchpriority="high">
           <div class="folha">
             <i class="alca"></i>
             <div class="folha-topo"><b>Falar ou digitar</b><span class="mic"><svg width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span></div>
@@ -83,30 +83,30 @@
   <div class="contido">
     <div class="exp-fone">
       <div class="fone pequeno">
-        <div class="tela">
-          <div class="rolo" aria-hidden="true"><img src="img/app-transacoes-longa.webp" width="600" height="2813" alt="" loading="lazy"></div>
-          <div class="barra-vidro" id="barra-vidro" role="tablist" aria-label="Barra de abas de demonstração (apertar e arrastar)">
-            <span class="lente" id="lente" aria-hidden="true"></span>
-            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg><span>Início</span></button>
-            <button role="tab" aria-selected="true" tabindex="0"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg><span>Transações</span></button>
-            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg><span>Metas</span></button>
-            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3zM3 7l12-4v4M16 13h2"/></svg><span>Contas</span></button>
-            <button role="tab" aria-selected="false" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg><span>Mais</span></button>
+        <div class="tela real" id="tela-real">
+          <img class="t on" src="img/app-aba-inicio.webp" width="540" height="1080" alt="Tela Início do Conta Aí: saldo do mês, atalhos para anotar gasto, receita, foto e voz, e o gráfico do mês">
+          <img class="t" src="img/app-aba-transacoes.webp" width="540" height="1080" loading="lazy" alt="Tela Transações do Conta Aí: lista dos gastos e receitas do mês, com busca e filtros">
+          <img class="t" src="img/app-aba-metas.webp" width="540" height="1080" loading="lazy" alt="Tela Metas do Conta Aí: limite por categoria e quanto já foi usado">
+          <img class="t" src="img/app-aba-contas.webp" width="540" height="1080" loading="lazy" alt="Tela Contas do Conta Aí: contas a pagar, saldos e cartões">
+          <img class="t" src="img/app-aba-mais.webp" width="540" height="1080" loading="lazy" alt="Tela Mais do Conta Aí: comparativo, backup, exportar e outras funções">
+          <div class="toques" aria-hidden="true">
+            <button type="button" tabindex="-1" data-i="0"></button><button type="button" tabindex="-1" data-i="1"></button><button type="button" tabindex="-1" data-i="2"></button><button type="button" tabindex="-1" data-i="3"></button><button type="button" tabindex="-1" data-i="4"></button>
           </div>
         </div>
       </div>
-      <p class="anota" aria-hidden="true"><svg width="64" height="40" viewBox="0 0 64 40"><path d="M60 8C40 2 18 10 8 30M8 30L6 18M8 30l11-4"/></svg>aperta e arrasta</p>
+      <p class="anota" aria-hidden="true"><svg width="64" height="40" viewBox="0 0 64 40"><path d="M60 8C40 2 18 10 8 30M8 30L6 18M8 30l11-4"/></svg>toque nas abas</p>
     </div>
     <div class="exp-texto">
       <p class="sobretitulo">Experimente aqui</p>
-      <h2>Aperte, arraste e solte. <span class="destaque-azul">É assim no app.</span></h2>
-      <p>A barra de baixo é de vidro: a lista passa por trás dela. Segure e leve o dedo para os lados: a lente segue, estica com a velocidade e encaixa na aba quando você solta.</p>
-      <ol class="passos">
-        <li>Vibra de leve a cada aba que a lente atravessa.</li>
-        <li>No celular, a borda do vidro entorta o que passa atrás.</li>
-        <li>Com “remover animações” ligado, a troca é direta.</li>
-      </ol>
-      <p class="aba-atual" aria-live="polite">Aba escolhida: <strong id="aba-atual">Transações</strong></p>
+      <h2>Toque numa aba. <span class="destaque-azul">É assim no app.</span></h2>
+      <p>Estas são telas de verdade do Conta Aí, com valores de exemplo. Escolha uma aba, aqui ou na barra do celular, e veja a página como ela é.</p>
+      <div class="abas-real" id="abas-real" role="tablist" aria-label="Telas do app">
+        <button type="button" role="tab" id="ar-0" aria-selected="true" aria-controls="tela-real"><strong>Início</strong><span>Quanto você pode gastar hoje, o saldo do mês e os atalhos para anotar.</span></button>
+        <button type="button" role="tab" id="ar-1" aria-selected="false" tabindex="-1" aria-controls="tela-real"><strong>Transações</strong><span>Tudo o que entrou e saiu, com busca e filtros.</span></button>
+        <button type="button" role="tab" id="ar-2" aria-selected="false" tabindex="-1" aria-controls="tela-real"><strong>Metas</strong><span>Limite por categoria, com aviso aos 80% e quando estoura.</span></button>
+        <button type="button" role="tab" id="ar-3" aria-selected="false" tabindex="-1" aria-controls="tela-real"><strong>Contas</strong><span>Boletos a pagar, saldos e cartões num lugar só.</span></button>
+        <button type="button" role="tab" id="ar-4" aria-selected="false" tabindex="-1" aria-controls="tela-real"><strong>Mais</strong><span>Comparativo, divisão de despesas, backup, planilha e o resto.</span></button>
+      </div>
     </div>
   </div>
   <svg width="1440" height="60" class="curva baixo esp" style="color:var(--superficie)" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60V34C180 8 360 8 540 30S900 58 1080 34S1340 6 1440 26V60Z"/></svg>
@@ -169,7 +169,7 @@
     <div class="titulo"><h2>Do lançamento à decisão, <span class="destaque-azul">sem planilha</span></h2><p>Tudo o que o app faz, numa olhada.</p></div>
     <div class="bento" id="bento">
       <article class="cartao-r largo escuro">
-        <div class="cr-texto"><h3>Lance falando</h3><p>Uma frase vira vários lançamentos, já com a categoria. A voz é entendida no próprio celular.</p></div>
+        <div class="cr-texto"><h3>Lance falando</h3><p>Uma frase vira vários lançamentos, já com a categoria. A voz é entendida no próprio celular.</p><button type="button" class="ver-tela" data-img="img/app-voz.webp" data-titulo="Falar ou digitar" data-alt="Folha Falar ou digitar do Conta Aí, com o campo para dizer os gastos">Ver a tela no app</button></div>
         <div class="cr-demo voz" aria-hidden="true">
           <span class="balao-eu"><span class="digita">30 de gasolina e 12 de pão</span></span>
           <span class="linha l1"><span>Gasolina · Transporte</span><b>−R$ 30,00</b></span>
@@ -184,28 +184,28 @@
       </article>
       <article class="cartao-r">
         <div class="cr-demo aviso" aria-hidden="true"><span class="notif"><img src="img/icone-192.png" width="34" height="34" alt=""><span><b>Água e esgoto vence em 3 dias</b><small>R$ 78,40 · toque para marcar como paga</small></span></span></div>
-        <h3>Nada vence sem aviso</h3><p>Contas fixas, parcelas e faturas lembradas a tempo, sem multa por esquecimento.</p>
+        <h3>Nada vence sem aviso</h3><p>Contas fixas, parcelas e faturas lembradas a tempo, sem multa por esquecimento.</p><button type="button" class="ver-tela" data-img="img/app-aba-contas.webp" data-titulo="Contas fixas, com aviso de vencimento" data-alt="Contas fixas do Conta Aí: aluguel vencido, internet que vence amanhã e energia já paga">Ver a tela no app</button>
       </article>
       <article class="cartao-r">
         <div class="cr-demo meta" aria-hidden="true"><svg width="104" height="104" viewBox="0 0 104 104"><circle cx="52" cy="52" r="42" class="fundo-anel"/><circle cx="52" cy="52" r="42" class="anel" transform="rotate(-90 52 52)"/></svg><span><b>Lazer</b><small>R$ 240 de R$ 300</small><em>80%: hora de segurar</em></span></div>
-        <h3>Metas que avisam</h3><p>Limite por categoria com aviso aos 80% e quando estoura. A sobra passa para o mês seguinte.</p>
+        <h3>Metas que avisam</h3><p>Limite por categoria com aviso aos 80% e quando estoura. A sobra passa para o mês seguinte.</p><button type="button" class="ver-tela" data-img="img/app-aba-metas.webp" data-titulo="Metas e objetivos" data-alt="Tela Metas do Conta Aí: meta de economia, desafio diário e objetivos">Ver a tela no app</button>
       </article>
       <article class="cartao-r">
-        <div class="cr-demo fatura" aria-hidden="true"><span class="fat-topo"><b>Cartão de crédito</b><small>vence dia 10</small></span><span class="trilho-f"><i></i></span><small>Fatura atual <b>R$ 273,90</b> · R$ 3.726 livres</small></div>
-        <h3>Cartão sem susto</h3><p>Fatura, limite e parcelamentos num lugar só, antes de passar mais uma compra.</p>
+        <div class="cr-demo fatura" aria-hidden="true"><span class="fat-topo"><b>Cartão de crédito</b><small>vence dia 17</small></span><span class="trilho-f"><i></i></span><small>Fatura atual <b>R$ 1.211,46</b> · R$ 3.788,54 livres</small></div>
+        <h3>Cartão sem susto</h3><p>Fatura, limite e parcelamentos num lugar só, antes de passar mais uma compra.</p><button type="button" class="ver-tela" data-img="img/app-cartoes.webp" data-titulo="Contas e cartões" data-alt="Contas e cartões do Conta Aí: saldo das contas e fatura atual do cartão de crédito">Ver a tela no app</button>
       </article>
       <article class="cartao-r largo creme com-fone">
-        <div class="cr-texto"><h3>Entenda para onde foi o dinheiro</h3><p>Este mês contra o anterior, categoria por categoria, e a previsão de como o mês fecha.</p>
+        <div class="cr-texto"><h3>Entenda para onde foi o dinheiro</h3><p>Este mês contra o anterior, categoria por categoria, e a previsão de como o mês fecha.</p><button type="button" class="ver-tela" data-img="img/app-comparativo.webp" data-titulo="Comparativo com o mês anterior" data-alt="Tela Comparativo do Conta Aí: receitas, gastos e saldo contra o mês anterior, e gastos por categoria">Ver a tela no app</button>
           <div class="barrinhas" aria-hidden="true"><i style="--h:52%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:100%" class="atual"></i></div></div>
-        <div class="meio-fone"><img src="img/app-comparativo.webp" width="600" height="1299" loading="lazy" alt="Tela Comparativo do Conta Aí: receitas, gastos e saldo contra o mês anterior"></div>
+        <div class="meio-fone"><img src="img/app-comparativo.webp" width="540" height="1080" loading="lazy" alt="Tela Comparativo do Conta Aí: receitas, gastos e saldo contra o mês anterior"></div>
       </article>
       <article class="cartao-r">
         <div class="cr-demo dividir" aria-hidden="true"><span class="avatar">A</span><span class="seta-dev"><svg width="64" height="16" viewBox="0 0 64 16"><path d="M2 8h58M52 2l8 6-8 6"/></svg>te deve</span><span class="valor-dev">+R$ 235,00</span></div>
-        <h3>Divida sem planilha</h3><p>Quem te deve e a quem você deve, com acerto em um toque.</p>
+        <h3>Divida sem planilha</h3><p>Quem te deve e a quem você deve, com acerto em um toque.</p><button type="button" class="ver-tela" data-img="img/app-divisao.webp" data-titulo="Divisão de despesas" data-alt="Divisão de despesas: Ana te deve R$ 235,00 e você deve R$ 42,50 ao Leo">Ver a tela no app</button>
       </article>
       <article class="cartao-r inteiro">
         <div class="cr-demo planilha" aria-hidden="true"><span class="arquivo">.xlsx</span><svg class="pasta" width="72" height="64" viewBox="0 0 72 64"><path d="M4 14a6 6 0 0 1 6-6h16l6 7h30a6 6 0 0 1 6 6v33a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#f2b01e"/><path d="M4 24h64v30a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z" fill="#f5c451"/></svg></div>
-        <div class="cr-texto"><h3>Planilha e backup, quando quiser</h3><p>Exporte o mês em Excel, importe de .xlsx ou .csv, e guarde uma cópia dos seus dados numa pasta sua. Trocou de celular? Restaura e pronto.</p></div>
+        <div class="cr-texto"><h3>Planilha e backup, quando quiser</h3><p>Exporte o mês em Excel, importe de .xlsx ou .csv, e guarde uma cópia dos seus dados numa pasta sua. Trocou de celular? Restaura e pronto.</p><button type="button" class="ver-tela" data-img="img/app-ferramentas.webp" data-titulo="Planilha, extrato e backup" data-alt="Ferramentas do Conta Aí: exportar e importar planilha, importar extrato, divisão de despesas">Ver a tela no app</button></div>
       </article>
     </div>
   </div>
@@ -263,7 +263,7 @@
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Meta por categoria</strong>, como mercado e delivery.</span></li>
         </ul>
       </div>
-      <figure><div class="celular"><img src="img/app-divisao.webp" width="600" height="1299" loading="lazy" alt="Divisão de despesas: Ana te deve R$ 235,00 e você deve R$ 42,50 ao Léo"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>A Ana te deve R$ 235,00.</span></figcaption></figure>
+      <figure><div class="celular"><img src="img/app-divisao.webp" width="540" height="1080" loading="lazy" alt="Divisão de despesas: Ana te deve R$ 235,00 e você deve R$ 42,50 ao Leo"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>A Ana te deve R$ 235,00.</span></figcaption></figure>
     </div>
     <div class="painel" role="tabpanel" id="painel-renda" aria-labelledby="aba-renda" hidden>
       <div>
@@ -275,7 +275,7 @@
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Exportação em Excel</strong> para levar ao contador ou à sua planilha.</span></li>
         </ul>
       </div>
-      <figure><div class="celular"><img src="img/app-comparativo.webp" width="600" height="1299" loading="lazy" alt="Comparativo do mês atual com o anterior: receitas, gastos, saldo e categorias"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Receitas 13% acima de setembro.</span></figcaption></figure>
+      <figure><div class="celular"><img src="img/app-comparativo.webp" width="540" height="1080" loading="lazy" alt="Comparativo do mês atual com o anterior: receitas, gastos, saldo e categorias"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Gastos 32% abaixo de outubro.</span></figcaption></figure>
     </div>
     <div class="painel" role="tabpanel" id="painel-cartao" aria-labelledby="aba-cartao" hidden>
       <div>
@@ -287,7 +287,7 @@
           <li><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span><strong>Campo “Pago com”</strong> em cada gasto, para separar cartão, Pix e dinheiro.</span></li>
         </ul>
       </div>
-      <figure><div class="celular"><img src="img/app-cartoes.webp" width="600" height="1299" loading="lazy" alt="Contas e cartões: saldo das contas e fatura atual do cartão de crédito"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Fatura de R$ 273,90 vence dia 10.</span></figcaption></figure>
+      <figure><div class="celular"><img src="img/app-cartoes.webp" width="540" height="1080" loading="lazy" alt="Contas e cartões: saldo das contas e fatura atual do cartão de crédito"></div><figcaption class="bolha"><img src="img/icone-192.png" width="28" height="28" alt=""><span>Fatura de R$ 1.211,46 vence dia 17.</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -332,7 +332,7 @@
         <div class="cmp-linha" role="row"><span role="cell">Outros apps de finanças</span><span role="cell">7 dias, o mais comum</span><span role="cell">R$&nbsp;39 em alguns</span></div>
       </div>
       <p class="vantagem">Em outros apps de finanças, o teste grátis costuma durar 7 dias, o tempo de ver só uma semana da sua vida financeira. No Conta Aí são <strong>mais de quatro vezes esse tempo</strong>, o suficiente para o salário entrar, as contas vencerem e a fatura fechar. E a mensalidade é <strong>cerca de um quarto</strong> da de alguns deles.</p>
-      <p class="fino">Os valores dos outros apps variam e mudam com o tempo. Em alguns, o teste não pede cartão. O nosso é pela Google Play, que pede uma forma de pagamento, e você não paga nada se cancelar antes de os 30 dias acabarem.</p>
+      <p class="fino">Os valores dos outros apps variam e mudam com o tempo. Em alguns, o teste não pede cartão. O nosso é pela Google Play, que pede uma forma de pagamento, e você não paga nada se cancelar antes de os 30 dias acabarem. <strong>Fique tranquilo: repetindo, nós avisaremos uma semana antes.</strong></p>
     </div>
   </div>
 </section>
@@ -364,6 +364,12 @@
     <small>Google Play e o logotipo do Google Play são marcas da Google LLC. Android é marca da Google LLC.</small>
   </div>
 </footer>
-<script src="landing.js?v=c3c7892e" defer></script>
+<dialog id="tela-dialogo" class="tela-dialogo" aria-labelledby="td-titulo">
+  <form method="dialog"><button class="td-fechar" aria-label="Fechar">×</button></form>
+  <div class="fone"><div class="tela real"><img id="td-img" src="" width="540" height="1080" alt=""></div></div>
+  <p id="td-titulo" class="td-titulo"></p>
+  <p class="td-nota">Tela real do app, com valores de exemplo.</p>
+</dialog>
+<script src="landing.js?v=dbeb405e" defer></script>
 </body>
 </html>

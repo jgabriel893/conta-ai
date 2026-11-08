@@ -380,29 +380,42 @@ h1, h2, h3, .marca { font-family: var(--titulo); letter-spacing: -.03em; }
 .exp-fone { position: relative; display: flex; justify-content: center; padding: 30px 0; }
 .exp-fone::before { content: ""; position: absolute; width: 440px; height: 440px; max-width: 100%; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 42% 58% 55% 45% / 48% 40% 60% 52%; background: var(--mancha); }
 .exp-fone .fone { position: relative; }
-.rolo { animation: rolo 20s ease-in-out infinite alternate; }
-.rolo img { width: 100%; height: auto; }
-@keyframes rolo { 0%, 8% { transform: translateY(0); } 92%, 100% { transform: translateY(-52%); } }
-.barra-vidro { position: absolute; left: 9px; right: 9px; bottom: 11px; height: 56px; padding: 0 4px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-radius: 999px; background: rgba(14, 165, 233, .3); -webkit-backdrop-filter: blur(10px) saturate(180%); backdrop-filter: blur(10px) saturate(180%); box-shadow: inset 1.5px 1.5px 1px -.5px rgba(255, 255, 255, .9), inset -1px -1px 1px -.5px rgba(255, 255, 255, .55), inset 0 0 10px rgba(255, 255, 255, .22), 0 8px 24px rgba(15, 23, 42, .22); touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; }
-.barra-vidro:active { cursor: grabbing; }
-.barra-vidro button { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 0; border: 0; background: none; color: #0f172a; font: 700 9.5px/1.1 "Inter", sans-serif; pointer-events: none; }
-.barra-vidro button:focus-visible { outline: 2px solid #0f172a; outline-offset: -4px; border-radius: 999px; }
-.barra-vidro svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-.barra-vidro button:last-of-type svg { stroke-width: 3; }
-.lente { position: absolute; top: 3px; left: 4px; width: calc((100% - 8px) / 5); height: 50px; border-radius: 999px; background: rgba(255, 255, 255, .4); box-shadow: inset 1.5px 1.5px 1px -.5px #fff, inset -1px -1px 1px -.5px rgba(255, 255, 255, .6), inset 0 0 6px rgba(255, 255, 255, .25), 0 2px 10px rgba(15, 23, 42, .12); pointer-events: none; transform: translateX(100%); }
+/* telas de verdade do app, uma por aba; a barra de baixo é a do próprio app (o toque fica por cima dela) */
+.fone .tela.real { aspect-ratio: 1 / 2; background: #131316; }
+.tela.real .t { position: absolute; inset: 0; opacity: 0; transition: opacity .28s ease; }
+.tela.real .t.on { opacity: 1; }
+.toques { position: absolute; left: 0; right: 0; bottom: 0; height: 12%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.toques button { padding: 0; border: 0; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .anota { position: absolute; left: calc(50% + 150px); bottom: 70px; margin: 0; display: flex; align-items: center; gap: 4px; font: italic 700 22px var(--titulo); color: var(--ouro-texto); transform: rotate(-6deg); white-space: nowrap; }
 .anota svg { width: 64px; height: 40px; flex: none; transform: scaleX(1); }
 .anota svg path { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .sobretitulo { margin: 0; font-size: .85rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ouro-texto); }
 .exp-texto h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.05; margin: 8px 0 16px; text-wrap: balance; }
 .exp-texto > p { color: var(--suave); font-size: 1.08rem; max-width: 46ch; }
-.passos { counter-reset: p; list-style: none; padding: 0; margin: 22px 0; display: grid; gap: 12px; }
-.passos li { counter-increment: p; display: flex; gap: 12px; align-items: flex-start; }
-.passos li::before { content: counter(p); flex: none; width: 26px; height: 26px; margin-top: 1px; border-radius: 50%; background: var(--mancha); color: var(--ouro-texto); font-weight: 800; font-size: .8rem; display: grid; place-items: center; }
-.aba-atual { color: var(--suave); font-size: .95rem; margin: 0; }
-.aba-atual strong { color: var(--marca); }
+.abas-real { display: grid; gap: 8px; margin: 22px 0 0; max-width: 46ch; }
+.abas-real button { display: grid; gap: 2px; text-align: left; padding: 12px 16px; border: 1.5px solid var(--borda, rgba(15, 23, 42, .12)); border-radius: 16px; background: var(--superficie, #fff); color: inherit; font: inherit; cursor: pointer; transition: border-color .2s, background .2s, transform .15s; }
+.abas-real button strong { font-size: 1rem; }
+.abas-real button span { color: var(--suave); font-size: .92rem; line-height: 1.35; }
+.abas-real button:hover { border-color: var(--marca); }
+.abas-real button:active { transform: scale(.99); }
+.abas-real button[aria-selected="true"] { border-color: var(--marca); background: var(--mancha); }
+.abas-real button[aria-selected="true"] strong { color: var(--marca); }
+.abas-real button:focus-visible { outline: 3px solid var(--marca); outline-offset: 2px; }
+.ver-tela { align-self: flex-start; margin-top: 4px; padding: 9px 16px; border: 1.5px solid currentColor; border-radius: 999px; background: none; color: var(--marca); font: 700 .9rem/1 "Inter", sans-serif; cursor: pointer; transition: background .2s, transform .15s; }
+.ver-tela:hover { background: var(--mancha); }
+.ver-tela:active { transform: scale(.97); }
+.ver-tela:focus-visible { outline: 3px solid var(--marca); outline-offset: 3px; }
+.cartao-r.escuro .ver-tela { color: #fff; }
+.cartao-r.escuro .ver-tela:hover { background: rgba(255, 255, 255, .12); }
+.tela-dialogo { width: min(92vw, 340px); max-height: 94vh; padding: 18px 18px 14px; border: 0; border-radius: 28px; background: var(--superficie); color: inherit; text-align: center; overflow: auto; box-shadow: 0 30px 80px rgba(2, 6, 23, .5); }
+.tela-dialogo::backdrop { background: rgba(2, 6, 23, .72); }
+.tela-dialogo .fone { width: min(100%, calc((88vh - 130px) / 2 + 20px), 280px); margin: 8px auto 0; box-shadow: none; }
+.td-fechar { position: absolute; top: 10px; right: 12px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--mancha); color: inherit; font-size: 22px; line-height: 1; cursor: pointer; }
+.td-fechar:focus-visible { outline: 3px solid var(--marca); }
+.td-titulo { margin: 12px 0 0; font-weight: 800; }
+.td-nota { margin: 2px 0 0; color: var(--suave); font-size: .85rem; }
 @media (max-width: 1100px) { .anota { display: none; } }
-@media (max-width: 900px) { .experimente .contido { grid-template-columns: minmax(0, 1fr); gap: 28px; } .exp-texto { text-align: center; } .exp-texto > p, .passos { margin-inline: auto; max-width: 46ch; text-align: left; } }
+@media (max-width: 900px) { .experimente .contido { grid-template-columns: minmax(0, 1fr); gap: 28px; } .exp-texto { text-align: center; } .exp-texto > p, .abas-real { margin-inline: auto; max-width: 46ch; text-align: left; } }
 
 /* recursos em grade, cada cartão com uma mini demonstração (pausa fora da tela) */
 .bento { display: flex; flex-wrap: wrap; gap: 16px; }
