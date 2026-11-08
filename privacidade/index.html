@@ -7,7 +7,7 @@
 <meta name="description" content="Como o aplicativo Conta Aí trata os seus dados: eles ficam só no seu celular.">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link rel="canonical" href="https://jgabriel893.github.io/conta-ai/privacidade/">
-<link rel="stylesheet" href="../estilo.css?v=38f09a92">
+<link rel="stylesheet" href="../estilo.css?v=4dce42f5">
 </head>
 <body>
 <header class="topo-simples"><div><a href="../"><img src="../img/icone-192.png" width="30" height="30" alt="">Conta Aí</a><span>Política de privacidade</span></div></header>
@@ -19,8 +19,9 @@
 <strong>Resumo em poucas palavras</strong>
 <ul>
 <li>Tudo o que você anota fica <strong>só no seu celular</strong>. Não existe conta, login nem servidor nosso guardando os seus dados.</li>
+<li>Se, e só se, você ligar o “Usar a dois” pela nuvem, uma cópia <strong>cifrada</strong> do que você compartilha com a outra pessoa passa por um servidor do Google (Firebase). Ninguém, nem nós nem o Google, consegue ler o conteúdo: a chave fica só nos dois celulares.</li>
 <li>Não temos anúncios, não vendemos dados e não usamos ferramentas de estatística de uso.</li>
-<li>O app só usa a internet para buscar a taxa do CDI no Banco Central.</li>
+<li>Sem o “Usar a dois” pela nuvem ligado, o app só usa a internet para buscar o CDI e o IPCA no Banco Central.</li>
 <li>A leitura do recibo é feita no próprio aparelho. A foto não é enviada a ninguém.</li>
 </ul>
 </div>
@@ -49,7 +50,8 @@
 <p><strong>Compras e Pix pelas notificações do banco (opcional, desligado por padrão).</strong> Em Mais &gt; Compras pelo banco, você pode autorizar, nas configurações do Android, o “acesso às notificações” para o Conta Aí. O Android entrega ao app as notificações de todos os aplicativos, mas o Conta Aí <strong>descarta imediatamente, sem ler,</strong> as de qualquer app que você não tenha marcado como banco. Das notificações dos apps marcados, o app guarda o texto no próprio celular e o interpreta no aparelho (valor, estabelecimento, se foi compra ou Pix) apenas para criar um lançamento que <strong>espera a sua confirmação</strong>; nada é lançado sozinho. Ofertas, faturas, limites, saldos e códigos de segurança são ignorados. Esses textos <strong>não são enviados</strong> a nenhum servidor. Você pode desligar no app e tirar a autorização a qualquer momento nas configurações do Android.</p>
 
 <h2>4. Uso da internet</h2>
-<p>O app faz uma única consulta pela internet: a taxa diária do CDI, na API pública do Banco Central do Brasil, usada para comparar o rendimento dos seus investimentos. A consulta contém apenas o período desejado. Nenhum dado seu é enviado. Como em qualquer acesso à internet, o Banco Central pode ver o endereço IP da conexão.</p>
+<p><strong>Banco Central.</strong> O app consulta a taxa diária do CDI e o IPCA mensal na API pública do Banco Central do Brasil, usados para comparar o rendimento dos seus investimentos e calcular a sua inflação. A consulta contém apenas o período desejado. Nenhum dado seu é enviado. Como em qualquer acesso à internet, o Banco Central pode ver o endereço IP da conexão.</p>
+<p><strong>Usar a dois (opcional).</strong> Em Mais &gt; Usar a dois, duas pessoas podem trocar os lançamentos que escolherem compartilhar (gastos da casa, contas fixas, objetivos, metas, dívidas, lista de desejos, garantias, acertos e, se você marcar, contas e cartões, um a um; você escolhe tipo por tipo e pode mudar quando quiser). Há três caminhos, todos cifrados com uma chave de 256 bits que nasce num celular e passa ao outro só pelo QR Code, na tela de um e na câmera do outro: (1) <strong>direto de um celular para o outro</strong>, pela rede Wi-Fi de casa, sem servidor; (2) por um <strong>arquivo cifrado</strong> que você mesmo envia pelo meio que quiser; (3) pela <strong>nuvem</strong>, se você ligar “Sincronizar pela nuvem”. Na nuvem, o app usa o Google Firebase (Firestore e login anônimo, sem e-mail nem cadastro): cada celular guarda ali um bloco de dados já cifrado, identificado por um código aleatório derivado da chave. O Google e o desenvolvedor veem apenas um bloco ilegível, o tamanho dele e a hora em que mudou, além do endereço IP e do identificador técnico anônimo do login. Ao desligar a nuvem ou desfazer o pareamento, o bloco é apagado.</p>
 
 <h2>5. Notificações</h2>
 <p>Os avisos de vencimento, de lançamentos automáticos e de backup são criados e agendados no próprio celular. Nenhum servidor envia notificações.</p>
@@ -70,11 +72,12 @@
 <tr><th>Terceiro</th><th>O quê</th><th>Para quê</th></tr>
 <tr><td>Google (ML Kit)</td><td>Métricas técnicas do componente de leitura de texto. Não inclui fotos nem o texto lido.</td><td>Funcionamento e melhoria do componente</td></tr>
 <tr><td>Google (Android e Google Play)</td><td>Cópia automática de backup do Android, se você ligou; dados da assinatura.</td><td>Backup do aparelho e cobrança</td></tr>
-<tr><td>Banco Central do Brasil</td><td>Endereço IP, ao consultar o CDI.</td><td>Obter a taxa do CDI</td></tr>
+<tr><td>Banco Central do Brasil</td><td>Endereço IP, ao consultar o CDI e o IPCA.</td><td>Obter as taxas</td></tr>
+<tr><td>Google (Firebase), só se você ligar a nuvem no “Usar a dois”</td><td>Um bloco de dados cifrado que ninguém além dos dois celulares consegue abrir, identificador técnico anônimo do login e endereço IP.</td><td>Levar os lançamentos compartilhados de um celular ao outro</td></tr>
 </table>
 
 <h2>9. Por quanto tempo e como apagar</h2>
-<p>Os dados ficam no aparelho enquanto você mantiver o app instalado. Para apagar tudo, desinstale o app ou use Configurações &gt; Apps &gt; Conta Aí &gt; Armazenamento &gt; Limpar dados. Você também pode excluir lançamentos, fotos e registros um a um dentro do app. Backups e planilhas que você gerou continuam onde você os guardou, e apagá-los é com você.</p>
+<p>Os dados ficam no aparelho enquanto você mantiver o app instalado. Para apagar tudo, desinstale o app ou use Configurações &gt; Apps &gt; Conta Aí &gt; Armazenamento &gt; Limpar dados. Você também pode excluir lançamentos, fotos e registros um a um dentro do app. Backups e planilhas que você gerou continuam onde você os guardou, e apagá-los é com você. Se você usou a nuvem do “Usar a dois”, desligue-a (e, de preferência, também no celular da outra pessoa) ou desfaça o pareamento: o app apaga o bloco cifrado do Firebase.</p>
 
 <h2>10. Seus direitos (LGPD)</h2>
 <p>A Lei Geral de Proteção de Dados (Lei 13.709/2018) dá a você direitos como confirmar o tratamento, acessar, corrigir e eliminar os seus dados. Como os dados estão no seu celular, você exerce esses direitos diretamente no app: ver, editar, exportar (planilha ou backup) e apagar. Se tiver qualquer dúvida ou pedido, escreva para <a href="mailto:EMAIL_DE_CONTATO">EMAIL_DE_CONTATO</a>.</p>
@@ -89,7 +92,7 @@
 <h2>13. Mudanças nesta política</h2>
 <p>Se o app passar a tratar dados de outra forma (por exemplo, ao incluir um novo serviço), esta política será atualizada antes e a data de vigência no topo será alterada.</p>
 
-<footer>Última atualização: 21 de outubro de 2026.</footer>
+<footer>Última atualização: 23 de outubro de 2026.</footer>
 </main>
 </body>
 </html>
