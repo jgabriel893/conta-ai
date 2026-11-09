@@ -377,7 +377,7 @@ h1, h2, h3, .marca { font-family: var(--titulo); letter-spacing: -.03em; }
 /* experimente: a barra de vidro do app, de verdade */
 .experimente { background: var(--fundo); }
 .experimente .contido { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 64px; align-items: center; }
-.exp-fone { position: relative; display: flex; justify-content: center; padding: 30px 0; }
+.exp-fone { position: relative; display: flex; justify-content: center; padding: 30px 0 76px; }
 .exp-fone::before { content: ""; position: absolute; width: 440px; height: 440px; max-width: 100%; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 42% 58% 55% 45% / 48% 40% 60% 52%; background: var(--mancha); }
 .exp-fone .fone { position: relative; }
 /* telas de verdade do app, uma por aba; a barra de baixo é a do próprio app (o toque fica por cima dela) */
@@ -386,8 +386,8 @@ h1, h2, h3, .marca { font-family: var(--titulo); letter-spacing: -.03em; }
 .tela.real .t.on { opacity: 1; }
 .toques { position: absolute; left: 0; right: 0; bottom: 0; height: 12%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .toques button { padding: 0; border: 0; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.anota { position: absolute; left: calc(50% + 150px); bottom: 70px; margin: 0; display: flex; align-items: center; gap: 4px; font: italic 700 22px var(--titulo); color: var(--ouro-texto); transform: rotate(-6deg); white-space: nowrap; }
-.anota svg { width: 64px; height: 40px; flex: none; transform: scaleX(1); }
+.anota { position: absolute; left: 50%; bottom: 14px; margin: 0; display: flex; align-items: center; gap: 4px; font: italic 700 22px var(--titulo); color: var(--ouro-texto); transform: translateX(-50%) rotate(-3deg); white-space: nowrap; }
+.anota svg { width: 64px; height: 40px; flex: none; transform: scaleY(-1); }
 .anota svg path { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .sobretitulo { margin: 0; font-size: .85rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ouro-texto); }
 .exp-texto h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.05; margin: 8px 0 16px; text-wrap: balance; }
@@ -414,7 +414,6 @@ h1, h2, h3, .marca { font-family: var(--titulo); letter-spacing: -.03em; }
 .td-fechar:focus-visible { outline: 3px solid var(--marca); }
 .td-titulo { margin: 12px 0 0; font-weight: 800; }
 .td-nota { margin: 2px 0 0; color: var(--suave); font-size: .85rem; }
-@media (max-width: 1100px) { .anota { display: none; } }
 @media (max-width: 900px) { .experimente .contido { grid-template-columns: minmax(0, 1fr); gap: 28px; } .exp-texto { text-align: center; } .exp-texto > p, .abas-real { margin-inline: auto; max-width: 46ch; text-align: left; } }
 
 /* recursos em grade, cada cartão com uma mini demonstração (pausa fora da tela) */
